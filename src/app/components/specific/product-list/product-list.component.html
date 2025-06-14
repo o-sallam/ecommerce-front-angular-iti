@@ -1,0 +1,15 @@
+<div class="container my-4">
+  <h2 class="mb-4">Products</h2>
+
+  <div *ngIf="loading" class="text-center">
+    <div class="spinner-border text-primary" role="status"></div>
+  </div>
+
+  <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+
+  <div class="row">
+    <div *ngFor="let product of products" class="col-md-4 mb-3">
+      <app-product-card [product]="product"></app-product-card>
+    </div>
+  </div>
+</div>
