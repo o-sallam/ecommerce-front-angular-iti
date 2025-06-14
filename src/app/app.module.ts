@@ -3,14 +3,25 @@ import { BrowserModule, provideClientHydration, withEventReplay } from '@angular
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ServerModule } from '@angular/platform-server';
+import { CartComponent } from './components/specific/cart/cart.component';
+import { CartItemComponent } from './components/shared/cart-item/cart-item.component';
+import { CartpageComponent } from './pages/cartpage/cartpage.component';
+import { NavbarComponent } from './components/specific/navbar/navbar.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CartComponent,
+    CartItemComponent,
+    CartpageComponent,
+    NavbarComponent
+  
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ServerModule,
   ],
   providers: [
     provideClientHydration(withEventReplay())
