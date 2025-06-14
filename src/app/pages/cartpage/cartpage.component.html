@@ -1,0 +1,11 @@
+<h2 class="text-center my-4">🛒 Shopping Cart</h2>
+
+<ng-container *ngIf="items.length > 0; else emptyCart">
+  <app-cart [items]="items" [total]="total"></app-cart>
+</ng-container>
+
+<ng-template #emptyCart>
+  <div class="alert alert-warning text-center mt-5">
+  Items are in the cart 🛒
+  </div>
+</ng-template>

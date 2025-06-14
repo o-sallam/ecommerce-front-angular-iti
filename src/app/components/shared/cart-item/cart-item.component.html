@@ -1,0 +1,7 @@
+<div class="cart-item">
+  <h3>{{ item.name }}</h3>
+  <p>Price : {{ item.price }} x {{ item.quantity }}</p>
+  <button (click)="decrement.emit()">-</button>
+  <button (click)="increment.emit()">+</button>
+  <button (click)="delete.emit()">Delete</button>
+</div>
