@@ -13,35 +13,34 @@ import { of } from 'rxjs';
 
 export class ProductService{
 
-  private apiUrl=    "mongodb+srv://admin:12345678iti@cluster0.ix3l1dd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-
+private apiUrl = "http://localhost:3000";
   constructor(private http: HttpClient) { } //injecting HttpClient to make HTTP requests
 
   getAllProducts(): Observable<Product[]>{
-   //return this.http.get<Product[]>(this.apiUrl + '/Products'); //get request to fetch all products
+   return this.http.get<Product[]>(this.apiUrl + '/Products'); //get request to fetch all products
 
-   return of([
-    {
-      id: 1,
-      name: 'Sample Product',
-      price: 99.99,
-      category: 'Electronics',
-      imageUrl: 'https://via.placeholder.com/150',
-      description: 'A sample electronic product',
-      image: 'https://via.placeholder.com/150',
-      inStock: true
-    },
-    {
-      id: 2,
-      name: 'Another Product',
-      price: 49.5,
-      category: 'Books',
-      imageUrl: 'https://via.placeholder.com/150',
-      description: 'A sample book product',
-      image: 'https://via.placeholder.com/150',
-      inStock: false
-    },
-  ]);
+  //  return of([
+  //   {
+  //     id: 1,
+  //     name: 'Sample Product',
+  //     price: 99.99,
+  //     category: 'Electronics',
+  //     imageUrl: 'https://via.placeholder.com/150',
+  //     description: 'A sample electronic product',
+  //     image: 'https://via.placeholder.com/150',
+  //     inStock: true
+  //   },
+  //   {
+  //     id: 2,
+  //     name: 'Another Product',
+  //     price: 49.5,
+  //     category: 'Books',
+  //     imageUrl: 'https://via.placeholder.com/150',
+  //     description: 'A sample book product',
+  //     image: 'https://via.placeholder.com/150',
+  //     inStock: false
+  //   },
+  // ]);
   }
 
   getProductById(id: string): Observable<Product> {

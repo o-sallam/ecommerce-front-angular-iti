@@ -14,6 +14,7 @@ import { CartComponent } from './components/specific/cart/cart.component';
 import { CartItemComponent } from './components/shared/cart-item/cart-item.component';
 import { CartpageComponent } from './pages/cartpage/cartpage.component';
 import { NavbarComponent } from './components/specific/navbar/navbar.component';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 
 
 
@@ -27,7 +28,8 @@ import { NavbarComponent } from './components/specific/navbar/navbar.component';
     CartComponent,
     CartItemComponent,
     CartpageComponent,
-    NavbarComponent
+    NavbarComponent,
+    ProductDetailComponent
 
 
   ],
