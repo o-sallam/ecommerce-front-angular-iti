@@ -10,22 +10,36 @@ import { CartService } from '../../../services/cart.service';
 })
 export class CartComponent  {
 
- @Input() items: CartItem[] = [];
-  @Input() total: number = 0;
-
+  @Input() items: CartItem[] = [];
+  
   @Output() increment = new EventEmitter<number>();
   @Output() decrement = new EventEmitter<number>();
   @Output() delete = new EventEmitter<any>();
 
+
+  get total(): number {
+   return this.items.reduce((acc, item) => acc + item.price * item.quantity, 0);
+
+}
+
+
   onIncrement(id: number) {
     this.increment.emit(id);
   }
-
   onDecrement(id: number) {
     this.decrement.emit(id);
   }
   onDelete(item: any) {
     this.delete.emit(item);
   }
+
+  //   addItem(newItem: CartItem) {
+  //   const existing = this.items.find((i) => i.id === newItem.id);
+  //   if (existing) {
+  //     existing.quantity += newItem.quantity;
+  //   } else {
+  //     this.items.push({ ...newItem });
+  //   }
+  // }
 
 }
