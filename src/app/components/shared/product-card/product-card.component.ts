@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+
+import { Component, Input } from '@angular/core';
+import { product as Product } from '../../../models/product.model';
 
 @Component({
   selector: 'app-product-card',
@@ -8,4 +10,12 @@ import { Component } from '@angular/core';
 })
 export class ProductCardComponent {
 
+  @Input() product!: Product;
+
+  constructor() { }
+
+  addToCart(product: Product) {
+    // Logic to add the product to the cart
+    console.log(`Product added to cart: ${product.name}`);
+  }
 }
