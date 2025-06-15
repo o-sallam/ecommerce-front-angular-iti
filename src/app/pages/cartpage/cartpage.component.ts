@@ -6,21 +6,43 @@ import { CartItem } from '../../models/cart-item.model';
   selector: 'app-cartpage',
   standalone: false,
   templateUrl: './cartpage.component.html',
-  styleUrl: './cartpage.component.css'
+  styleUrl: './cartpage.component.css',
 })
-export class CartpageComponent implements OnInit{
-
+export class CartpageComponent implements OnInit {
   items: CartItem[] = [];
   total: number = 0;
 
-  constructor(private cartService: CartService) {}
+  constructor(private cartService: CartService) {
+ this.cartService.getItemsObservable().subscribe(items => {
+      this.items = items;
+      this.total = this.cartService.getTotal();
+    });
+  }
 
   ngOnInit(): void {
-    this.loadCart();
+  this.items = this.cartService.getItems(); 
+  this.total = this.cartService.getTotal();
   }
 
   loadCart() {
     this.items = this.cartService.getItems();
-    this.total = this.items.reduce((acc, item) => acc + item.price * item.quantity, 0);
+    this.total = this.cartService.getTotal();
+  }
+  addToCart(item: CartItem) {
+  this.cartService.addItem(item);
+  this.loadCart();
+}
+  handleIncrement(id: number) {
+    this.cartService.incrementQuantity(id);    
+  }
+
+  handleDecrement(id: number) {
+    this.cartService.decrementQuantity(id);
+    this.loadCart();
+  }
+
+  handleDelete(item: CartItem) {
+    this.cartService.delete(item);
+    this.loadCart();
   }
 }

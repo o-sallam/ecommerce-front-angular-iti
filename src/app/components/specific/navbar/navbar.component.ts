@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { CartService } from '../../../services/cart.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,9 +9,17 @@ import { Router } from '@angular/router';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-
+  cartCount: number = 0;
   searchTerm:string='';
-  constructor(private router: Router) {}
+
+  constructor(private router: Router ,private cartService: CartService) {}
+
+  ngOnInit(): void {
+    this.cartService.getItemsObservable().subscribe(items => {
+          this.cartCount = items.reduce((acc, item) => acc + item.quantity, 0);
+    });
+  }
+  
  onSearch() {
     if (this.searchTerm.trim()) {
       this.router.navigate(['/products'], {
