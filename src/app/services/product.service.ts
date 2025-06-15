@@ -14,11 +14,12 @@ import { of } from 'rxjs';
 export class ProductService{
 
 private apiUrl = "http://localhost:3000";
-  constructor(private http: HttpClient) { } //injecting HttpClient to make HTTP requests
+private productsApiUrl=this.apiUrl+'/products';
+  constructor(private http: HttpClient) { }       //injecting HttpClient to make HTTP requests
 
-  getAllProducts(): Observable<Product[]>{
-   return this.http.get<Product[]>(this.apiUrl + '/Products'); //get request to fetch all products
-
+  getAllProducts(){//async function to fetch all products
+  const result= this.http.get<Product[]>(this.productsApiUrl); //get request to fetch all products
+  return result;
   //  return of([
   //   {
   //     id: 1,
@@ -41,22 +42,22 @@ private apiUrl = "http://localhost:3000";
   //     inStock: false
   //   },
   // ]);
-  }
+   }
 
   getProductById(id: string): Observable<Product> {
-    return this.http.get<Product>(`${this.apiUrl}/products/${id}`); //get request to fetch a product by id
+    return this.http.get<Product>(`${this.productsApiUrl}/${id}`); //get request to fetch a product by id
   }
 
   createProduct(product:Product): Observable<Product>{
-    return this.http.post<Product>(this.apiUrl +'/products',product);
+    return this.http.post<Product>(this.productsApiUrl,product);
   }
 
   updateProductById(id:string, product: Product):Observable<Product>{
-    return this.http.put<Product>(`${this.apiUrl}/products/${id}`,product);
+    return this.http.put<Product>(`${this.productsApiUrl}/${id}`,product);
   }
 
   deleteProductById(id:string):Observable<any>{
-    return this.http.delete(`${this.apiUrl}/products/${id}`);
+    return this.http.delete(`${this.productsApiUrl}/${id}`);
   }
 }
 

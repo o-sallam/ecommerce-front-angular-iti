@@ -15,24 +15,26 @@ export class ProductListComponent implements OnInit {
    error='';
 
    constructor(private productService: ProductService) { } //dependency injection of ProductService
-   ngOnInit(): void {                //ngonit lifecycle hook to load products when the component initializes
+   ngOnInit(): void {                                     //ngonit lifecycle hook to load products when the component initializes
 
     this.loadProducts();
 
    }
 
-   loadProducts(): void {
-    this.loading = true;
-    this.productService.getAllProducts().subscribe({
-      next:(data)=>{    //
-        this.products=data;
-        this.loading=false;
-      },
-      error:(err)=>{
-        this.error='Error loading products';
-        this.loading=false;
-      }
-    });
-   }
+loadProducts(): void {
+  this.loading = true;
+
+  this.productService.getAllProducts().subscribe({
+    next: (data) => {
+      this.products = data;
+      this.loading = false;
+    },
+    error: (err) => {
+      this.error = 'Error loading products';
+      this.loading = false;
+    }
+  });
+}
+
 
 }

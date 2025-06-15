@@ -6,9 +6,9 @@ import { ProductDetailComponent } from './pages/product-detail/product-detail.co
 
 
 const routes: Routes = [
-  // {path:'home',component:},
+  {path:'',component:ProductListComponent},
   {path:'cart',component:CartpageComponent},
-  {path:'poduct',component:ProductListComponent},
+  {path:'products',component:ProductListComponent},
   // {path:'about',component:},
   // {path:'contactUs',component:},
  { path: 'products/:id', component: ProductDetailComponent },
