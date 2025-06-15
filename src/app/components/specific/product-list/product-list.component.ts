@@ -1,7 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import { ProductService } from '../../../services/product.service';
 // Update the import path and casing if needed
-import { product } from '../../../models/product.model';
+import { Product } from '../../../models/product.model';
 
 @Component({
   selector: 'app-product-list',
@@ -10,7 +10,7 @@ import { product } from '../../../models/product.model';
   styleUrl: './product-list.component.css'
 })
 export class ProductListComponent implements OnInit {
-   products: product[] = [];
+   products: Product[] = [];
    loading:boolean=true;
    error='';
 
@@ -24,7 +24,7 @@ export class ProductListComponent implements OnInit {
    loadProducts(): void {
     this.loading = true;
     this.productService.getAllProducts().subscribe({
-      next:(data)=>{    // 
+      next:(data)=>{    //
         this.products=data;
         this.loading=false;
       },

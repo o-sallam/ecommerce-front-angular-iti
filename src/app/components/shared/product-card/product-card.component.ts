@@ -1,6 +1,7 @@
 
 import { Component, Input } from '@angular/core';
-import { product as Product } from '../../../models/product.model';
+import { Product} from '../../../models/product.model';
+import { CartService } from '../../../services/cart.service';
 
 @Component({
   selector: 'app-product-card',
@@ -10,12 +11,11 @@ import { product as Product } from '../../../models/product.model';
 })
 export class ProductCardComponent {
 
-  @Input() product!: Product;
+  @Input() product!: Product; // Using non-null assertion operator since product is expected to be provided by parent component(product-list)
 
-  constructor() { }
+  constructor(private cartService:CartService) { }
 
-  addToCart(product: Product) {
-    // Logic to add the product to the cart
-    console.log(`Product added to cart: ${product.name}`);
+  addToCart(): void {
+   this.cartService.addToCart(this.product);
   }
 }
