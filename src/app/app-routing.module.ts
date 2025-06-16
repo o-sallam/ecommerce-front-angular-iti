@@ -14,19 +14,17 @@ import { HomeComponent } from './pages/home/home.component';
 
 
 const routes: Routes = [
-  {path:'',component:HomeComponent},
+  {path:'home',component:HomeComponent},
   {path:'cart',component:CartpageComponent},
   {path:'products',component:ProductListComponent},
 
-  // {path:'about',component:},
-  // {path:'contactUs',component:},
  { path: 'products/:id', component: ProductDetailComponent },
  {path: 'register', component: RegisterFormComponent },
  {path: 'login', component: LoginFormComponent },
 
   {path: 'products/:id', component: ProductDetailComponent },
   {path:'aboutus',component:AboutusComponent},
-  {path:'contactUs',component:ContactusComponent},
+  {path:'contactus',component:ContactusComponent},
   {path:'**',component:NotFoundComponent}
 
 
