@@ -15,6 +15,8 @@ import { CartItemComponent } from './components/shared/cart-item/cart-item.compo
 import { CartpageComponent } from './pages/cartpage/cartpage.component';
 import { NavbarComponent } from './components/specific/navbar/navbar.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
+import { RegisterFormComponent } from './pages/register-form/register-form.component';
+import { LoginFormComponent } from './pages/login-form/login-form.component';
 
 
 
@@ -29,7 +31,9 @@ import { ProductDetailComponent } from './pages/product-detail/product-detail.co
     CartItemComponent,
     CartpageComponent,
     NavbarComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    RegisterFormComponent,
+    LoginFormComponent
 
 
   ],
