@@ -1,1 +1,196 @@
-<p>contactus works!</p>
+<div class="contact-container">
+  <!-- Page Header -->
+  <section class="contact-header">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p>We'd love to hear from you. Get in touch with our team of Victorian furniture experts.</p>
+    </div>
+  </section>
+
+  <!-- Contact Content -->
+  <section class="contact-content">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Contact Form -->
+        <div class="contact-form-section">
+          <h2>Send us a Message</h2>
+          <form class="contact-form" (ngSubmit)="onSubmit()" #contactForm="ngForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name *</label>
+                <input
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                  [(ngModel)]="formData.firstName"
+                  required
+                  #firstName="ngModel">
+                <div class="error-message" *ngIf="firstName.invalid && firstName.touched">
+                  First name is required
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name *</label>
+                <input
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  [(ngModel)]="formData.lastName"
+                  required
+                  #lastName="ngModel">
+                <div class="error-message" *ngIf="lastName.invalid && lastName.touched">
+                  Last name is required
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                [(ngModel)]="formData.email"
+                required
+                email
+                #email="ngModel">
+              <div class="error-message" *ngIf="email.invalid && email.touched">
+                <span *ngIf="email.errors?.['required']">Email is required</span>
+                <span *ngIf="email.errors?.['email']">Please enter a valid email address</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                [(ngModel)]="formData.phone">
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject *</label>
+              <select
+                id="subject"
+                name="subject"
+                [(ngModel)]="formData.subject"
+                required
+                #subject="ngModel">
+                <option value="">Select a subject</option>
+                <option value="general">General Inquiry</option>
+                <option value="product">Product Information</option>
+                <option value="restoration">Restoration Services</option>
+                <option value="delivery">Delivery & Shipping</option>
+                <option value="valuation">Furniture Valuation</option>
+                <option value="other">Other</option>
+              </select>
+              <div class="error-message" *ngIf="subject.invalid && subject.touched">
+                Please select a subject
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea
+                id="message"
+                name="message"
+                [(ngModel)]="formData.message"
+                required
+                rows="6"
+                placeholder="Tell us how we can help you..."
+                #message="ngModel"></textarea>
+              <div class="error-message" *ngIf="message.invalid && message.touched">
+                Message is required
+              </div>
+            </div>
+
+            <div class="form-group checkbox-group">
+              <label class="checkbox-label">
+                <input
+                  type="checkbox"
+                  name="newsletter"
+                  [(ngModel)]="formData.newsletter">
+                <span class="checkmark"></span>
+                Subscribe to our newsletter for exclusive updates and special offers
+              </label>
+            </div>
+
+            <button
+              type="submit"
+              class="submit-btn"
+              [disabled]="contactForm.invalid || isSubmitting">
+              {{isSubmitting ? 'Sending...' : 'Send Message'}}
+            </button>
+          </form>
+
+          <div class="success-message" *ngIf="showSuccessMessage">
+            <h3>Thank you for your message!</h3>
+            <p>We'll get back to you within 24 hours.</p>
+          </div>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="contact-info-section">
+          <h2>Get in Touch</h2>
+
+          <div class="contact-info-card">
+            <div class="info-item">
+              <div class="info-icon">📍</div>
+              <div class="info-content">
+                <h3>Visit Our Showroom</h3>
+                <p>123 Heritage Lane<br>
+                   Antiqueshire, London<br>
+                   SW1A 1AA, United Kingdom</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon">📞</div>
+              <div class="info-content">
+                <h3>Call Us</h3>
+                <p>+44 20 7123 4567<br>
+                   Monday - Saturday: 9:00 AM - 6:00 PM<br>
+                   Sunday: 11:00 AM - 4:00 PM</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon">✉️</div>
+              <div class="info-content">
+                <h3>Email Us</h3>
+                <p>info&#64;victorianelegance.com<br>
+                   sales&#64;victorianelegance.com<br>
+                   restoration&#64;victorianelegance.com</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="business-hours">
+            <h3>Business Hours</h3>
+            <div class="hours-grid">
+              <div class="hour-item" *ngFor="let hour of businessHours">
+                <span class="day">{{hour.day}}</span>
+                <span class="time">{{hour.time}}</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item" *ngFor="let faq of faqs">
+          <h3>{{faq.question}}</h3>
+          <p>{{faq.answer}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -22,9 +22,11 @@ import { LoginFormComponent } from './pages/login-form/login-form.component';
 import { CheckoutPageComponent } from './pages/checkout-page/checkout-page.component';
 import { CheckoutContainerComponent } from './components/specific/checkout-container/checkout-container.component';
 import { CheckoutFormComponent } from './components/shared/checkout-form/checkout-form.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './pages/home/home.component';
 import { ContactusComponent } from './pages/contactus/contactus.component';
+import { CommonModule } from '@angular/common';
+import { FooterComponent } from './components/shared/footer/footer.component';
 
 
 
@@ -49,6 +51,7 @@ import { ContactusComponent } from './pages/contactus/contactus.component';
     CheckoutFormComponent,
     HomeComponent,
     ContactusComponent,
+    FooterComponent,
 
 
   ],
@@ -57,6 +60,8 @@ import { ContactusComponent } from './pages/contactus/contactus.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
+    CommonModule,
+    FormsModule,
 
 
 
