@@ -1,12 +1,20 @@
-<div class="cart-list">
+<!-- <div class="cart-list">
   <app-cart-item
     *ngFor="let item of items"
     [item]="item"
-    (increment)="onIncrement(item.id)"
+    (increment)="onIncrement(item.)"
     (decrement)="onDecrement(item.id)"
-    (delete)="onDelete(item)">
+    (delete)="onDelete(item.id)">
   </app-cart-item>
   <div class="total mt-3 fw-bold">
     Total: {{total}} LE
   </div>
-</div>
+</div> -->
+
+<app-cart-item
+  *ngFor="let item of items"
+  [item]="item"
+  (increment)="onIncrement(item.id)"
+  (decrement)="onDecrement(item.id)"
+  (delete)="onDelete(item.id)">
+</app-cart-item>

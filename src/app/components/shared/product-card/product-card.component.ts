@@ -15,7 +15,7 @@ export class ProductCardComponent {
 
   constructor(private cartService:CartService) { }
 
-  addToCart(): void {
-   this.cartService.addItem(this.product);
+  addToCart(productId:string):void {
+   this.cartService.addItemToCart(productId);
   }
 }
