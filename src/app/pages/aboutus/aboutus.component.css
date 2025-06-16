@@ -1,0 +1,50 @@
+.aboutusHeader img{
+  width: 100%;
+  height: 90vh;
+}
+.txt{
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  text-align: center;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 60%;
+}
+.section-2{
+  display: flex;
+  margin: 5%;
+}
+.left-section{
+  flex-grow: 1;
+}
+.right-section{
+  flex-grow: 1;
+  /* align-items: end; */
+  width: 45%;
+  padding: 40px;
+  border-radius: 7px;
+  background-color: rgb(199, 222, 241);
+  
+}
+.left-section img{
+  width: 90%;
+  height: 60vh;
+  border-radius: 7px;
+  box-shadow:0px 1px 10px rgba(0, 0, 0, 0.299)
+}
+.workingHour{
+  display: flex;
+  justify-content: space-between;
+}
+.icons{
+  width: 50%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  cursor: pointer;
+}
+.icons img{
+  width: 30px;
+  height: 30px;
+}

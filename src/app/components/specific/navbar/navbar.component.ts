@@ -15,9 +15,6 @@ export class NavbarComponent {
   constructor(private router: Router ,private cartService: CartService) {}
 
   ngOnInit(): void {
-    this.cartService.getItemsObservable().subscribe(items => {
-          this.cartCount = items.reduce((acc, item) => acc + item.quantity, 0);
-    });
   }
   
  onSearch() {

@@ -1,4 +1,3 @@
-
 import { Component, Input } from '@angular/core';
 import { Product} from '../../../models/product.model';
 import { CartService } from '../../../services/cart.service';
@@ -16,6 +15,10 @@ export class ProductCardComponent {
   constructor(private cartService:CartService) { }
 
   addToCart(): void {
-  // this.cartService.addItem(this.product);
+  // this.cartService.addItemToCart(this.product);
   }
-}
+
+
+
+
+

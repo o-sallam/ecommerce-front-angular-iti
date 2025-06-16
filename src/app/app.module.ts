@@ -15,33 +15,48 @@ import { CartItemComponent } from './components/shared/cart-item/cart-item.compo
 import { CartpageComponent } from './pages/cartpage/cartpage.component';
 import { NavbarComponent } from './components/specific/navbar/navbar.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
+
 import { RegisterFormComponent } from './pages/register-form/register-form.component';
 import { LoginFormComponent } from './pages/login-form/login-form.component';
+
+import { CheckoutPageComponent } from './pages/checkout-page/checkout-page.component';
+import { CheckoutContainerComponent } from './components/specific/checkout-container/checkout-container.component';
+import { CheckoutFormComponent } from './components/shared/checkout-form/checkout-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './pages/home/home.component';
+import { ContactusComponent } from './pages/contactus/contactus.component';
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-
     ProductListComponent,
     ProductCardComponent,
-
     CartComponent,
     CartItemComponent,
     CartpageComponent,
     NavbarComponent,
     ProductDetailComponent,
+
     RegisterFormComponent,
-    LoginFormComponent
+    LoginFormComponent,
+
+
+    CheckoutPageComponent,
+    CheckoutContainerComponent,
+    CheckoutFormComponent,
+    HomeComponent,
+    ContactusComponent,
 
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-
-     HttpClientModule,
+    HttpClientModule,
+    ReactiveFormsModule,
 
 
 
