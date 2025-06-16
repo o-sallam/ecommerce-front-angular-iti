@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration, withEventReplay } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,7 +9,7 @@ import { ProductListComponent } from './components/specific/product-list/product
 import { HttpClientModule } from '@angular/common/http';
 import { ProductCardComponent } from './components/shared/product-card/product-card.component';
 
-import { ServerModule } from '@angular/platform-server';
+
 import { CartComponent } from './components/specific/cart/cart.component';
 import { CartItemComponent } from './components/shared/cart-item/cart-item.component';
 import { CartpageComponent } from './pages/cartpage/cartpage.component';
@@ -40,12 +40,9 @@ import { ProductDetailComponent } from './pages/product-detail/product-detail.co
      HttpClientModule,
 
 
-    ServerModule,
 
   ],
-  providers: [
-    provideClientHydration(withEventReplay())
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
