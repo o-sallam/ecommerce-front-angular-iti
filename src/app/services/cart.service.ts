@@ -1,77 +1,66 @@
 import { Injectable } from '@angular/core';
 import { CartItem } from '../models/cart-item.model';
-import { Product } from '../models/product.model';
-import { BehaviorSubject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Observable, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CartService {
   private items: CartItem[] = [];
-
-  private itemsSubject = new BehaviorSubject<CartItem[]>([]);
-  constructor() {
-    if (typeof window !== 'undefined') {
-      const stored = localStorage.getItem('cartItems');
-      if (stored) {
-        this.items = JSON.parse(stored);
-        this.itemsSubject.next(this.items);
-      }
-    }
+  private apiUrl = "http://localhost:3000";
+  private cartApiUrl=this.apiUrl+'/cart';
+  private deleteProduct=this.apiUrl+'delete/:id';
+  private currentUser='68377eac183c5f0af6fefe7c';
+  constructor(private http: HttpClient){}
+  
+  addItemToCart(productId:string) {
+    this.http.post(this.cartApiUrl,{
+      productId,
+      userId:this.currentUser
+    }).subscribe()
   }
 
-  getItemsObservable() {
-    return this.itemsSubject.asObservable();
-  }
+getItems(): Observable<CartItem[]> {
+  return this.http.get<CartItem[]>(`${this.cartApiUrl}?userId=${this.currentUser}`).pipe(
+    tap(items => this.items = items)
+  );
+}
 
-  private updateState() {
-    this.itemsSubject.next([...this.items]);
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('cartItems', JSON.stringify(this.items));
-    }
-  }
+  deleteItemFromCart(productId: string) {
+  this.items = this.items.filter((i) => i.id !== productId);
+  this.http.request('delete', `${this.cartApiUrl}/delete`, {
+    body: { productId, userId: this.currentUser }
+  }).subscribe(); 
+}
 
-  addItem(product: Omit<CartItem, 'quantity'>) {
-    const existing = this.items.find((i) => i.id === product.id);
-    if (existing) {
-      existing.quantity++;
-    } else {
-      this.items.push({ ...product, quantity: 1 });
-    }
-    this.updateState();
+incrementQuantity(productId: string) {
+  const item = this.items.find((i) => i.id === productId);
+  if (item) {
+    item.quantity++;
+    this.updateItemQuantityOnServer(productId, item.quantity);
   }
+}
 
-  getItems(): CartItem[] {
-    return this.items;
+decrementQuantity(productId: string) {
+  const item = this.items.find((i) => i.id === productId);
+  if (!item) return;
+  if (item.quantity > 1) {
+    item.quantity--;
+    this.updateItemQuantityOnServer(productId, item.quantity);
+  } else {
+    this.deleteItemFromCart(productId);
   }
+}
 
-  delete(item: CartItem) {
-    this.items = this.items.filter((i) => i.id !== item.id);
-    this.updateState();
-  }
-  incrementQuantity(id: number) {
-    let item = this.items.find((i) => i.id === id);
-    if (item) {
-      item.quantity++;
-    }
-    this.updateState();
-  }
-
-  decrementQuantity(id: number) {
-    const item = this.items.find((i) => i.id === id);
-    if (!item) return;
-    if (item.quantity > 1) {
-      item.quantity--;
-    } else {
-      this.delete(item);
-    }
-    this.updateState();
-  }
+private updateItemQuantityOnServer(productId: string, quantity: number) {
+    this.http.put(`${this.cartApiUrl}/${productId}`, {
+    quantity,
+    userId: this.currentUser
+  }).subscribe();
+}
 
   getTotal(): number {
-    //  this.items.reduce((acc,item) =>{
-    //   return acc + item.price * item.quantity;
-    //  },0)
     return this.items.reduce(
       (acc, item) => acc + item.price * item.quantity,
       0

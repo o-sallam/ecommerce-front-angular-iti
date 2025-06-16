@@ -12,37 +12,39 @@ export class CartpageComponent implements OnInit {
   items: CartItem[] = [];
   total: number = 0;
 
+  
   constructor(private cartService: CartService) {
- this.cartService.getItemsObservable().subscribe(items => {
-      this.items = items;
-      this.total = this.cartService.getTotal();
-    });
   }
 
   ngOnInit(): void {
-  this.items = this.cartService.getItems(); 
-  this.total = this.cartService.getTotal();
+  this.cartService.getItems().subscribe(items => {
+    this.items = items;
+    this.total = this.cartService.getTotal();
+  });
   }
 
   loadCart() {
-    this.items = this.cartService.getItems();
+     this.cartService.getItems().subscribe(items => {
+    this.items = items;
     this.total = this.cartService.getTotal();
+  });
   }
-  addToCart(item: CartItem) {
-  this.cartService.addItem(item);
+  addToCart(productId:string) {
+  this.cartService.addItemToCart(productId);
   this.loadCart();
 }
-  handleIncrement(id: number) {
-    this.cartService.incrementQuantity(id);    
+  handleIncrement(productId:string) {
+    this.cartService.incrementQuantity(productId);
+    this.loadCart();    
   }
 
-  handleDecrement(id: number) {
-    this.cartService.decrementQuantity(id);
+  handleDecrement(productId:string) {
+    this.cartService.decrementQuantity(productId);
     this.loadCart();
   }
 
-  handleDelete(item: CartItem) {
-    this.cartService.delete(item);
+  handleDelete(productId:string) {
+    this.cartService.deleteItemFromCart(productId);
     this.loadCart();
   }
 }

@@ -14,8 +14,7 @@ export class ProductCardComponent {
   @Input() product!: Product; // Using non-null assertion operator since product is expected to be provided by parent component(product-list)
 
   constructor(private cartService:CartService) { }
+  addToCart(productId:string):void {
+   this.cartService.addItemToCart(productId);
 
-  addToCart(): void {
-  // this.cartService.addItem(this.product);
-  }
 }
