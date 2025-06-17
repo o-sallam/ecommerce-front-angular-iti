@@ -1,17 +1,13 @@
 <div class="contact-container">
-  <!-- Page Header -->
   <section class="contact-header">
     <div class="container">
       <h1>Contact Us</h1>
       <p>We'd love to hear from you. Get in touch with our team of Victorian furniture experts.</p>
     </div>
   </section>
-
-  <!-- Contact Content -->
   <section class="contact-content">
     <div class="container">
       <div class="contact-grid">
-        <!-- Contact Form -->
         <div class="contact-form-section">
           <h2>Send us a Message</h2>
           <form class="contact-form" (ngSubmit)="onSubmit()" #contactForm="ngForm">
@@ -129,14 +125,12 @@
             <p>We'll get back to you within 24 hours.</p>
           </div>
         </div>
-
-        <!-- Contact Information -->
         <div class="contact-info-section">
           <h2>Get in Touch</h2>
 
           <div class="contact-info-card">
             <div class="info-item">
-              <div class="info-icon">📍</div>
+              <div class="info-icon"><img class="" width="30" height="30" src="assets/icons/location2.svg" alt=""></div>
               <div class="info-content">
                 <h3>Visit Our Showroom</h3>
                 <p>123 Heritage Lane<br>
@@ -145,18 +139,18 @@
               </div>
             </div>
 
-            <div class="info-item">
-              <div class="info-icon">📞</div>
+            <div class="info-item ">
+              <div class="info-icon"><img class="" width="25" height="30" src="assets/icons/phone2.svg" alt=""></div>
               <div class="info-content">
                 <h3>Call Us</h3>
                 <p>+44 20 7123 4567<br>
-                   Monday - Saturday: 9:00 AM - 6:00 PM<br>
+                   Monday- Saturday: 9:00 AM-6:00 PM<br>
                    Sunday: 11:00 AM - 4:00 PM</p>
               </div>
             </div>
 
             <div class="info-item">
-              <div class="info-icon">✉️</div>
+              <div class="info-icon"><img class="" width="30" height="30" src="assets/icons/mail2.svg" alt=""></div>
               <div class="info-content">
                 <h3>Email Us</h3>
                 <p>info&#64;victorianelegance.com<br>
@@ -166,7 +160,7 @@
             </div>
           </div>
 
-          <div class="business-hours">
+          <!-- <div class="business-hours">
             <h3>Business Hours</h3>
             <div class="hours-grid">
               <div class="hour-item" *ngFor="let hour of businessHours">
@@ -174,14 +168,12 @@
                 <span class="time">{{hour.time}}</span>
               </div>
             </div>
-          </div>
+          </div> -->
 
         </div>
       </div>
     </div>
   </section>
-
-  <!-- FAQ Section -->
   <section class="faq-section">
     <div class="container">
       <h2>Frequently Asked Questions</h2>

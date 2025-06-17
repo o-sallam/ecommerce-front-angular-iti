@@ -27,6 +27,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ContactusComponent } from './pages/contactus/contactus.component';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from './components/shared/footer/footer.component';
+import { AboutusComponent } from './pages/aboutus/aboutus.component';
 
 
 
@@ -41,18 +42,15 @@ import { FooterComponent } from './components/shared/footer/footer.component';
     CartpageComponent,
     NavbarComponent,
     ProductDetailComponent,
-
     RegisterFormComponent,
     LoginFormComponent,
-
-
     CheckoutPageComponent,
     CheckoutContainerComponent,
     CheckoutFormComponent,
     HomeComponent,
     ContactusComponent,
     FooterComponent,
-
+    AboutusComponent,
 
   ],
   imports: [

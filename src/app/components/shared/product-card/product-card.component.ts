@@ -17,6 +17,11 @@ export class ProductCardComponent {
   addToCart(): void {
     //this.cartService.addItemToCart(this.product);
   }
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> c81753826fda01ccc0253b9a7cfd60a5d76ee7dc
 }
 
 

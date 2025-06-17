@@ -35,8 +35,8 @@
 
 
 
-<nav class="navbar">
-      <div class="nav-container">
+<nav class="navbar ">
+      <div class="nav-container w-100">
         <div class="nav-logo">
           <a routerLink="/home">
             <h2>Victorian Elegance</h2>
@@ -86,12 +86,17 @@
             </svg>
           </div>
 
-          <div class="cart-container" (click)="toggleCart()">
-            <svg class="cart-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M3 3H5L5.4 5M7 13H17L21 5H5.4M7 13L5.4 5M7 13L4.7 15.3C4.3 15.7 4.6 16.5 5.1 16.5H17M17 13V17C17 18.1 16.1 19 15 19H9C7.9 19 7 18.1 7 17V13M17 13H7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <span class="cart-count" *ngIf="cartItemCount > 0">{{cartItemCount}}</span>
+          <div class="cart-container">
+            <a [routerLink]="['/cart']">
+            <img class="cart-icon" width="24" height="24" src="assets/icons/cart.svg" alt="">
+            <span class="cart-count" *ngIf="cartCount > 0">{{cartCount}}</span>
+            </a>
           </div>
+          
+        <!-- 
+      -->
+ 
+
 
           <div class="hamburger" (click)="toggleMobileMenu()">
             <span></span>
