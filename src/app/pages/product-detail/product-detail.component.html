@@ -5,7 +5,8 @@
         <div class="col-lg-6">
           <div class="product-image-gallery">
             <img
-              [src]="product.image"
+              *ngIf="product.images && product.images.length > 0"
+              [src]="product.images[0]"
               class="main-product-image"
               [alt]="product.name"
             />

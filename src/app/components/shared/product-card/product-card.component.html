@@ -1,7 +1,7 @@
 <div class="product-card" *ngIf="product">
   <div class="product-image">
     <a [routerLink]="['/products', product.id]">
-      <img [src]="product.image" [alt]="product.name" />
+      <img [src]="product.thumbnail" [alt]="product.name" />
     </a>
     <div class="product-overlay">
       <button class="quick-view-btn" [routerLink]="['/products', product.id]">
