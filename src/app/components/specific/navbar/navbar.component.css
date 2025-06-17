@@ -321,6 +321,15 @@
       background-color: #E1D8C9;
       transition: 0.3s;
     }
+    .btn-login button{
+      width: 100px;
+      height: 40px;
+      border: 2px solid #E1D8C9;
+      background-color: #93353E;
+      color: #E1D8C9;
+      border-radius: 7px;
+      font-size: large;
+    }
 
     @media (max-width: 768px) {
       .nav-menu {

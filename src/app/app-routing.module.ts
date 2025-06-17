@@ -11,11 +11,11 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
-  {path:'home',component:HomeComponent},
+  {path:'',component:HomeComponent},
   {path:'cart',component:CartpageComponent},
   {path:'products',component:ProductListComponent},
  { path: 'products/:id', component: ProductDetailComponent },
- {path: '', component: RegisterFormComponent },
+ {path: 'register', component: RegisterFormComponent },
  {path: 'login', component: LoginFormComponent },
   {path: 'products/:id', component: ProductDetailComponent },
   {path:'aboutus',component:AboutusComponent},
