@@ -6,17 +6,26 @@ import { CartService } from '../../../services/cart.service';
   selector: 'app-product-card',
   standalone: false,
   templateUrl: './product-card.component.html',
-  styleUrl: './product-card.component.css'
+  styleUrls: ['./product-card.component.css']
 })
 export class ProductCardComponent {
 
   @Input() product!: Product; // Using non-null assertion operator since product is expected to be provided by parent component(product-list)
 
-  constructor(private cartService:CartService) { }
+  constructor(private cartService: CartService) { }
 
   addToCart(): void {
-  // this.cartService.addItemToCart(this.product);
+    //this.cartService.addItemToCart(this.product);
   }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> c81753826fda01ccc0253b9a7cfd60a5d76ee7dc
 }
+
+
+
+
+
+

@@ -9,23 +9,25 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './product-detail.component.css',
 })
 export class ProductDetailComponent implements OnInit {
-  product?: Product; //optional :undefiend if data is not loaded &=Product if it's loaded
+  product?: Product;
+  relatedProducts: Product[] = [];
   loading: boolean = true;
 
   constructor(
     private route: ActivatedRoute,
     private productService: ProductService
-  ) {} //injecting ActivatedRoute to get route parameters and ProductService to fetch product data
+  ) {}
 
   ngOnInit(): void {
-    //ngOnInit lifecycle hook to fetch product details when component initializes
- this.route.paramMap.subscribe(params => {
+    this.route.paramMap.subscribe((params) => {
       const id = params.get('id');
       if (id) {
+        this.loading = true;
         this.productService.getProductById(id).subscribe({
           next: (data) => {
             this.product = data;
             this.loading = false;
+            this.loadRelatedProducts();
           },
           error: (err) => {
             console.error('Error loading product:', err);
@@ -36,9 +38,22 @@ export class ProductDetailComponent implements OnInit {
         console.error('No product ID found in route parameters');
         this.loading = false;
       }
-   
     });
+  }
 
+  loadRelatedProducts(): void {
+    if (this.product) {
+      this.productService.getAllProducts().subscribe({
+        next: (allProducts) => {
+          this.relatedProducts = allProducts
+            .filter((p) => p.id !== this.product?.id)
+            .slice(0, 4);
+        },
+        error: (err) => {
+          console.error('Error loading related products:', err);
+        },
+      });
+    }
   }
 
   addToCart(): void {
