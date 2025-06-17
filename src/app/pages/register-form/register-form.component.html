@@ -7,32 +7,27 @@
 
           <!-- Header -->
           <div class="auth-header">
-            <div class="auth-icon-container">
-              <div class="auth-icon">
-                <i class="fas fa-user-plus"></i>
-              </div>
-            </div>
             <h2 class="auth-title">Create Account</h2>
             <p class="auth-subtitle">Join our amazing community today</p>
           </div>
 
           <!-- Body -->
           <div class="auth-body">
-            <form class="auth-form">
+            <form class="auth-form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
 
               <!-- Name Fields -->
               <div class="row g-4 mb-4">
                 <div class="col-md-6">
-                  <div class="form-floating input-group-animated">
-                    <input type="text" class="form-control auth-input" id="firstName" placeholder="First Name">
+                  <div class="form-floating ">
+                    <input type="text" class="form-control" id="firstName" placeholder="First Name" formControlName="firstName">
                     <label for="firstName" class="auth-label">
                       <i class="fas fa-user me-2"></i>First Name
                     </label>
                   </div>
                 </div>
                 <div class="col-md-6">
-                  <div class="form-floating input-group-animated">
-                    <input type="text" class="form-control auth-input" id="lastName" placeholder="Last Name">
+                  <div class="form-floating ">
+                    <input type="text" class="form-control" id="lastName" placeholder="Last Name" formControlName="lastName">
                     <label for="lastName" class="auth-label">
                       <i class="fas fa-user me-2"></i>Last Name
                     </label>
@@ -42,8 +37,8 @@
 
               <!-- Email -->
               <div class="mb-4">
-                <div class="form-floating input-group-animated">
-                  <input type="email" class="form-control auth-input" id="email" placeholder="Email Address">
+                <div class="form-floating ">
+                  <input type="email" class="form-control" id="email" placeholder="Email Address" formControlName="email">
                   <label for="email" class="auth-label">
                     <i class="fas fa-envelope me-2"></i>Email Address
                   </label>
@@ -53,16 +48,16 @@
               <!-- Password Fields -->
               <div class="row g-4 mb-4">
                 <div class="col-md-6">
-                  <div class="form-floating input-group-animated">
-                    <input type="password" class="form-control auth-input" id="password" placeholder="Password">
+                  <div class="form-floating ">
+                    <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password">
                     <label for="password" class="auth-label">
                       <i class="fas fa-lock me-2"></i>Password
                     </label>
                   </div>
                 </div>
                 <div class="col-md-6">
-                  <div class="form-floating input-group-animated">
-                    <input type="password" class="form-control auth-input" id="confirmPassword" placeholder="Confirm Password">
+                  <div class="form-floating ">
+                    <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password" formControlName="confirmPassword">
                     <label for="confirmPassword" class="auth-label">
                       <i class="fas fa-lock me-2"></i>Confirm Password
                     </label>
@@ -73,13 +68,13 @@
               <!-- Checkboxes -->
               <div class="mb-5">
                 <div class="custom-checkbox-container mb-3">
-                  <input class="custom-checkbox" type="checkbox" id="terms">
+                  <input class="form-check-input custom-checkbox" type="checkbox" id="terms" formControlName="terms">
                   <label class="custom-checkbox-label" for="terms">
                     I agree to the <a href="#" class="auth-link">Terms of Service</a> and <a href="#" class="auth-link">Privacy Policy</a>
                   </label>
                 </div>
                 <div class="custom-checkbox-container">
-                  <input class="custom-checkbox" type="checkbox" id="newsletter">
+                  <input class="custom-checkbox" type="checkbox" id="newsletter" formControlName="newsletter">
                   <label class="custom-checkbox-label" for="newsletter">
                     Subscribe to newsletter for updates and exclusive offers
                   </label>
@@ -101,7 +96,7 @@
               <!-- Login Link -->
               <div class="auth-footer text-center">
                 <p>Already have an account?
-                  <a href="#" class="auth-link">Sign In</a>
+                  <a routerLink="/login" class="auth-link" style="cursor: pointer;">Sign In</a>
                 </p>
               </div>
 
