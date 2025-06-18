@@ -40,5 +40,9 @@ private productsApiUrl=this.apiUrl+'/products';
   getRelatedProducts(productId: string): Observable<Product[]> {
     return this.http.get<Product[]>(`${this.productsApiUrl}/related/${productId}`);
   }
+
+  getFeaturedProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>(`${this.productsApiUrl}/featured`);
+  }
 }
 
