@@ -9,6 +9,7 @@
           </div>
 
           <div class="auth-body">
+            <div *ngIf="errorMsg" class="alert alert-danger mb-3">{{ errorMsg }}</div>
             <form
               class="auth-form"
               [formGroup]="registerForm"
@@ -118,11 +119,11 @@
               </div>
 
               <div class="d-grid mb-4">
-                <button type="submit" class="auth-btn auth-btn-primary">
-                  <span class="btn-content">
+                <button type="submit" class="auth-btn auth-btn-primary" [disabled]="loading || registerForm.invalid">
+                  <span class="btn-content" *ngIf="!loading">
                     <i class="fas fa-user-plus me-2"></i>Create My Account
                   </span>
-                  <div class="btn-loading">
+                  <div class="btn-loading" *ngIf="loading">
                     <i class="fas fa-spinner fa-spin"></i>
                   </div>
                 </button>
