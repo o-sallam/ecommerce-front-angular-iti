@@ -11,16 +11,15 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HomeComponent } from './pages/home/home.component';
 
 const routes: Routes = [
-  {path:'',component:HomeComponent},
-  {path:'cart',component:CartpageComponent},
-  {path:'products',component:ProductListComponent},
- { path: 'products/:id', component: ProductDetailComponent },
- {path: 'register', component: RegisterFormComponent },
- {path: 'login', component: LoginFormComponent },
-  {path:'aboutus',component:AboutusComponent},
-  {path:'contactus',component:ContactusComponent},
-  {path:'**',component:NotFoundComponent}
-
+  { path: '', component: HomeComponent },
+  { path: 'cart', component: CartpageComponent },
+  { path: 'products', component: ProductListComponent },
+  { path: 'products/:id', component: ProductDetailComponent },
+  { path: 'register', component: RegisterFormComponent },
+  { path: 'login', component: LoginFormComponent },
+  { path: 'aboutus', component: AboutusComponent },
+  { path: 'contactus', component: ContactusComponent },
+  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({
