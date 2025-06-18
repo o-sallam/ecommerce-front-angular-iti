@@ -1,23 +1,19 @@
-/* Register Component - Beige Elegance Theme */
 
-/* Main container with a soft beige background */
 .auth-container {
   min-height: 100vh;
   padding: 4rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f7f2e9; /* Soft, warm beige */
+  background-color: #f7f2e9; 
   position: relative;
 }
 
-/* Ensure content is visible */
 .container-fluid {
   position: relative;
   z-index: 2;
 }
 
-/* The main registration card with a light theme */
 .auth-card {
   background: #ffffff;
   border-radius: 16px;
@@ -27,31 +23,10 @@
   animation: fadeIn 1s ease-out;
 }
 
-/* Card Header */
 .auth-header {
   padding: 3rem 2rem 2rem;
   text-align: center;
   border-bottom: 1px solid #f0e9e2;
-}
-
-.auth-icon-container {
-  margin-bottom: 1.5rem;
-}
-
-.auth-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 70px;
-  height: 70px;
-  background: #f7f2e9;
-  border-radius: 50%;
-  border: 1px solid #e9e1d8;
-}
-
-.auth-icon i {
-  font-size: 1.8rem;
-  color: #93353E; /* Dark red icon color */
 }
 
 .auth-title {
@@ -61,25 +36,12 @@
   font-size: 2.5rem;
   text-shadow: none;
 }
-
 .auth-subtitle {
   color: #777;
   font-size: 1.1rem;
 }
-
-/* Card Body */
 .auth-body {
   padding: 3rem;
-}
-
-/* Form Inputs - Light Theme */
-.form-floating > .form-control {
-  background-color: #fdfdfd !important;
-  color: #333 !important;
-  border: 1px solid #ddd !important;
-  border-radius: 8px !important;
-  padding: 1rem !important;
-  transition: all 0.3s ease;
 }
 
 .form-floating > .form-control:focus {
@@ -87,17 +49,8 @@
   border-color: #93353E !important;
 }
 
-/* Form Labels - Light Theme */
 .form-floating > label {
   color: #888;
-}
-
-.form-floating > .form-control:-webkit-autofill,
-.form-floating > .form-control:-webkit-autofill:hover,
-.form-floating > .form-control:-webkit-autofill:focus,
-.form-floating > .form-control:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 30px #fdfdfd inset !important;
-    -webkit-text-fill-color: #333 !important;
 }
 
 .form-floating > .form-control:focus ~ label,
@@ -114,15 +67,10 @@
   color: #93353E;
 }
 
-/* Checkbox - Light Theme */
 .custom-checkbox-label {
   color: #555;
   font-weight: normal;
-}
-
-.custom-checkbox-label::before {
-    background-color: #fff;
-    border: 2px solid #ccc;
+  margin-left: 5px;
 }
 
 .custom-checkbox:checked ~ .custom-checkbox-label::before {
@@ -130,19 +78,6 @@
     border-color: #93353E;
 }
 
-.auth-link {
-  color: #93353E;
-  font-weight: 600;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.auth-link:hover {
-  color: #7A2B33;
-  text-decoration: underline;
-}
-
-/* Submit Button */
 .auth-btn-primary {
   background-color: #93353E;
   color: white;
@@ -164,12 +99,10 @@
   box-shadow: 0 8px 25px rgba(147, 53, 62, 0.3);
 }
 
-/* Footer Link */
 .auth-footer p {
   color: #555;
 }
 
-/* Keyframe Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -184,57 +117,6 @@
   animation: fadeIn 1s ease-out 0.8s both;
 }
 
-.social-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.social-btn-google {
-  color: #db4437;
-}
-
-.social-btn-google:hover {
-  border-color: #db4437;
-  background: #db4437;
-  color: white;
-}
-
-/* .social-btn-facebook {
-  color: #db4437;
-}
-
-.social-btn-facebook:hover {
-  border-color: #db4437;
-  background: #db4437;
-  color: white;
-}
-
-.social-btn-twitter {
-  color: #1DA1F2;
-}
-
-.social-btn-twitter:hover {
-  border-color: #1DA1F2;
-  background: #1DA1F2;
-  color: white;
-} */
-
-/* .social-btn-github {
-  color: #333;
-}
-
-.social-btn-github:hover {
-  border-color: #333;
-  background: #333;
-  color: white;
-} */
-
-
-.auth-footer p {
-  color: #6c757d;
-  margin: 0;
-}
-
 .auth-link {
   color: #93353E;
   text-decoration: none;
@@ -243,11 +125,10 @@
 }
 
 .auth-link:hover {
-  color: #5a6fd8;
+  color: #93353E;
   text-decoration: underline;
 }
 
-/* Animations */
 @keyframes slideUp {
   from {
     opacity: 0;
@@ -275,7 +156,6 @@
     transform: scale(1);
   }
 }
-
 @keyframes slideInUp {
   from {
     opacity: 0;
@@ -315,8 +195,6 @@
     transform: rotate(360deg);
   }
 }
-
-/* Responsive Design */
 @media (max-width: 768px) {
   .auth-container {
     padding: 1rem 0;

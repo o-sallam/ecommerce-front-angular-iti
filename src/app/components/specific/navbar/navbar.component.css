@@ -175,6 +175,8 @@
     }
 
     .btn-login button{
+            font-family: 'Georgia', serif;
+      font-weight: bold;
       width: 100px;
       height: 40px;
       border: 2px solid #E1D8C9;
@@ -182,6 +184,11 @@
       color: #E1D8C9;
       border-radius: 7px;
       font-size: large;
+    }
+    .btn-login button:hover {
+            background-color: #E1D8C9;
+            color: #93353E;
+      border-radius: 7px;
     }
 
     @media (max-width: 768px) {

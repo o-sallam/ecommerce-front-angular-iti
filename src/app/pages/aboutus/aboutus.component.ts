@@ -40,7 +40,7 @@ Creates clean UIs with Bootstrap and Tailwind CSS.
       name: 'Nada Esmail',
       role: 'FrontEnd developer',
       bio: 'Front-end developer focused on building clean, responsive interfaces using Angular, React, Bootstrap, and Tailwind CSS. Passionate about user experience, performance.',
-      image: 'assets/images/nada.jpeg'
+      image: 'assets/images/creators/nada.jpeg'
     }
 
   ];
