@@ -26,19 +26,19 @@ Creates clean UIs with Bootstrap and Tailwind CSS.
     },
     {
       name: 'Alaa Kamal',
-      role: 'FrontEnd developer',
+      role: 'Front-end developer',
       bio: 'Alaa focuses on crafting modern web experiences using frontend technologies, with a love for continuous learning',
       image: 'assets/images/creators/alaa.jpeg',
     },
     {
       name: 'Fadwa Bassiony',
-      role: 'designer',
-      bio: 'Fadwa is passionate about design and loves turning ideas into clean, intuitive interfaces using CSS and a strong sense for UI/UX.',
+      role: 'Front-end developer',
+      bio: 'Fadwa combines a love for design with strong front-end skills to build elegant, user-focused web interfaces using CSS and JavaScript.',
       image: 'assets/images/creators/fadwa.jpeg',
     },
     {
       name: 'Nada Esmail',
-      role: 'FrontEnd developer',
+      role: 'Front-end developer',
       bio: 'Front-end developer focused on building clean, responsive interfaces using Angular, React, Bootstrap, and Tailwind CSS. Passionate about user experience, performance.',
       image: 'assets/images/creators/nada.jpeg'
     }

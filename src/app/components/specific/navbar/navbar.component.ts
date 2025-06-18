@@ -56,8 +56,7 @@ isMenuOpen = false;
   showProductsDropdown = false;
   isCartOpen = false;
   searchQuery = '';
-  cartItemCount = 2; 
-
+  cartItemCount = 2;
 
   onSearch() {
     if (this.searchQuery.trim()) {
@@ -73,5 +72,3 @@ isMenuOpen = false;
     }
   }
 }
-
-
