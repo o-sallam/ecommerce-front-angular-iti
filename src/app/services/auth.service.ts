@@ -24,9 +24,12 @@ export class AuthService {
   }
 
   // Store user info after login
-  setSession(token: string, email: string) {
+  setSession(token: string, username: string, email?: string) {
     localStorage.setItem('token', token);
-    localStorage.setItem('userEmail', email);
+    localStorage.setItem('username', username);
+    if (email) {
+      localStorage.setItem('userEmail', email);
+    }
   }
 
   isLoggedIn(): boolean {
@@ -34,11 +37,12 @@ export class AuthService {
   }
 
   getUsername(): string | null {
-    return localStorage.getItem('userEmail');
+    return localStorage.getItem('username');
   }
 
   logout() {
     localStorage.removeItem('token');
+    localStorage.removeItem('username');
     localStorage.removeItem('userEmail');
   }
 }
