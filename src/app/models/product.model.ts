@@ -1,9 +1,13 @@
 export interface Product {
-  _id: string;
+  id: string;
   name: string;
   price: number;
   description: string;
-  image: string;
+  images: string[];
+  thumbnail: string;
   category: string;
-  inStock: boolean;
+  quantity: number;
+  featured: boolean;
+  ratings: any[];
+  totalRating: number;
 }

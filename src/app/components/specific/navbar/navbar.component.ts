@@ -34,7 +34,7 @@ isMenuOpen = false;
   showProductsDropdown = false;
   isCartOpen = false;
   searchQuery = '';
-  cartItemCount = 2; // Demo count
+  cartItemCount = 2; 
   cartItems = [
     {
       id: 1,
@@ -63,7 +63,6 @@ isMenuOpen = false;
   onSearch() {
     if (this.searchQuery.trim()) {
       console.log('Searching for:', this.searchQuery);
-      // Implement search functionality
     }
   }
 
