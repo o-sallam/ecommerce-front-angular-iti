@@ -43,11 +43,11 @@ export class ProductDetailComponent implements OnInit {
 
   loadRelatedProducts(): void {
     if (this.product) {
-      this.productService.getAllProducts().subscribe({
-        next: (allProducts) => {
-          this.relatedProducts = allProducts
-            .filter((p) => p.id !== this.product?.id)
-            .slice(0, 4);
+      console.log(this.product);
+      this.productService.getRelatedProducts(this.product.id).subscribe({
+
+        next: (products) => {
+          this.relatedProducts = products;
         },
         error: (err) => {
           console.error('Error loading related products:', err);

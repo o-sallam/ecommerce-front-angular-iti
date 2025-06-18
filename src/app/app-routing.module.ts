@@ -17,7 +17,6 @@ const routes: Routes = [
  { path: 'products/:id', component: ProductDetailComponent },
  {path: 'register', component: RegisterFormComponent },
  {path: 'login', component: LoginFormComponent },
-  {path: 'products/:id', component: ProductDetailComponent },
   {path:'aboutus',component:AboutusComponent},
   {path:'contactus',component:ContactusComponent},
   {path:'**',component:NotFoundComponent}
