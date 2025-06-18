@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core'; //injectable to allow this service to be injected into components
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import{ Observable } from 'rxjs';       //observable handling asynchoronous data
 import { Product } from '../models/product.model';
 import { environment } from '../../environments/environment';
@@ -16,13 +16,17 @@ private productsApiUrl=this.apiUrl+'/products';
   constructor(private http: HttpClient) { }       //injecting HttpClient to make HTTP requests
 
   getAllProducts(){//async function to fetch all products
-  const result= this.http.get<Product[]>(this.productsApiUrl); //get request to fetch all products
-  return result;
-
-   }
+    const token = localStorage.getItem('token');
+    let headers = new HttpHeaders();
+    if (token) headers = headers.set('Authorization', `Bearer ${token}`);
+    return this.http.get<Product[]>(this.productsApiUrl, { headers });
+  }
 
   getProductById(id: string): Observable<Product> {
-    return this.http.get<Product>(`${this.productsApiUrl}/${id}`); //get request to fetch a product by id
+    const token = localStorage.getItem('token');
+    let headers = new HttpHeaders();
+    if (token) headers = headers.set('Authorization', `Bearer ${token}`);
+    return this.http.get<Product>(`${this.productsApiUrl}/${id}`, { headers });
   }
 
   createProduct(product:Product): Observable<Product>{
@@ -38,11 +42,17 @@ private productsApiUrl=this.apiUrl+'/products';
   }
 
   getRelatedProducts(productId: string): Observable<Product[]> {
-    return this.http.get<Product[]>(`${this.productsApiUrl}/related/${productId}`);
+    const token = localStorage.getItem('token');
+    let headers = new HttpHeaders();
+    if (token) headers = headers.set('Authorization', `Bearer ${token}`);
+    return this.http.get<Product[]>(`${this.productsApiUrl}/related/${productId}`, { headers });
   }
 
   getFeaturedProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(`${this.productsApiUrl}/featured`);
+    const token = localStorage.getItem('token');
+    let headers = new HttpHeaders();
+    if (token) headers = headers.set('Authorization', `Bearer ${token}`);
+    return this.http.get<Product[]>(`${this.productsApiUrl}/featured`, { headers });
   }
 }
 

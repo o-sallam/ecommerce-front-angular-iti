@@ -25,10 +25,30 @@ export class CartService {
     );
   }
 
+  total: number = 0;
+  totalItems: number = 0;
+
   getItems(): Observable<CartItem[]> {
+    const token = localStorage.getItem('token');
     return this.http
-      .get<CartItem[]>(`${this.cartApiUrl}?userId=${this.currentUser}`)
-      .pipe(tap((items) => (this.items = items)));
+      .get<any>(`${environment.apiUrl}/cart/me`, {
+        headers: token ? { Authorization: `Bearer ${token}` } : {}
+      })
+      .pipe(
+        tap((cartRes) => {
+          this.total = cartRes.total;
+          this.totalItems = cartRes.totalItems;
+        }),
+        require('rxjs').map((cartRes: any) =>
+          (cartRes.items || []).map((item: any) => ({
+            id: item.productId?.id || 'unknown',
+            name: item.productId?.name || 'Unknown Product',
+            price: item.productId?.price ?? item.price ?? 0,
+            quantity: item.quantity,
+            image: item.productId?.thumbnail || null
+          }))
+        )
+      );
   }
 
   deleteItemFromCart(productId: string) {

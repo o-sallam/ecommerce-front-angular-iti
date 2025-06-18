@@ -11,13 +11,15 @@ import { CartItem } from '../../models/cart-item.model';
 export class CartpageComponent implements OnInit {
   items: CartItem[] = [];
   total: number = 0;
+  totalItems: number = 0;
 
   constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
     this.cartService.getItems().subscribe((items) => {
       this.items = items;
-      this.total = this.cartService.getTotal();
+      this.total = this.cartService.total;
+      this.totalItems = this.cartService.totalItems;
     });
   }
 
