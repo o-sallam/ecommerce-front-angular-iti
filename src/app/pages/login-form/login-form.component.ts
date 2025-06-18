@@ -41,8 +41,8 @@ export class LoginFormComponent implements OnInit {
       this.authService.login({ email, password }).subscribe({
         next: (res) => {
           this.loading = false;
-          // Store JWT token (assume res.token)
-          localStorage.setItem('token', res.token);
+          // Store JWT token and email
+          this.authService.setSession(res.token, this.loginForm.value.email);
           this.router.navigate(['/']);
         },
         error: (err) => {

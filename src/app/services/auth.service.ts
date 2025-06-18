@@ -22,4 +22,23 @@ export class AuthService {
   login(data: { email: string; password: string }): Observable<any> {
     return this.http.post(`${this.apiUrl}/login`, data);
   }
+
+  // Store user info after login
+  setSession(token: string, email: string) {
+    localStorage.setItem('token', token);
+    localStorage.setItem('userEmail', email);
+  }
+
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem('token');
+  }
+
+  getUsername(): string | null {
+    return localStorage.getItem('userEmail');
+  }
+
+  logout() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('userEmail');
+  }
 }
