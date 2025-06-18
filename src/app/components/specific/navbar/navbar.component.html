@@ -103,9 +103,11 @@
       <div class="btn-login" *ngIf="!loggedIn">
         <button [routerLink]="['/login']">Login</button>
       </div>
-      <div class="btn-login" *ngIf="loggedIn">
-        <span class="navbar-username"><i class="fas fa-user me-2"></i>{{ username }}</span>
-        <button (click)="logout()" class="btn btn-link logout-btn">Logout</button>
+      <div class="btn-login navbar-user-actions" *ngIf="loggedIn">
+        <span class="navbar-username">
+          <i class="fas fa-user"></i> {{ username }}
+        </span>
+        <button (click)="logout()" class="logout-btn">Logout</button>
       </div>
     </div>
   </div>

@@ -42,7 +42,7 @@ export class LoginFormComponent implements OnInit {
         next: (res) => {
           this.loading = false;
           // Store JWT token, username, and email (if available)
-          this.authService.setSession(res.token, res.username, res.email || this.loginForm.value.email);
+          this.authService.setSession(res.token, res.user.username, res.user.email || this.loginForm.value.email);
           this.router.navigate(['/']);
         },
         error: (err) => {
