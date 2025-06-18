@@ -2,12 +2,8 @@
   <div class="container-fluid">
     <div class="row justify-content-center">
       <div class="col-lg-6 col-xl-5">
-        <!-- Login Card -->
         <div class="auth-card">
 
-          <!-- Header -->
-          <!-- Header -->
-           
           <div class="auth-header">
             <div *ngIf="welcomeName" class="alert alert-success welcome-message">
               Hello, {{ welcomeName }}! Please log in to continue.
@@ -16,26 +12,23 @@
             <p class="auth-subtitle">Sign in to your account</p>
           </div>
 
-          <!-- Body -->
           <div class="auth-body">
-            <form class="auth-form">
-              <!-- Email -->
+            <div *ngIf="errorMsg" class="alert alert-danger mb-3">{{ errorMsg }}</div>
+            <form class="auth-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
               <div class="form-floating mb-4">
-                <input type="email" class="form-control" id="loginEmail" placeholder="Email Address">
+                <input type="email" class="form-control" id="loginEmail" placeholder="Email Address" formControlName="email">
                 <label for="loginEmail" class="auth-label">
                   <i class="fas fa-envelope me-2"></i>Email Address
                 </label>
               </div>
 
-              <!-- Password -->
               <div class="form-floating mb-3">
-                <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+                <input type="password" class="form-control" id="loginPassword" placeholder="Password" formControlName="password">
                 <label for="loginPassword" class="auth-label">
                   <i class="fas fa-lock me-2"></i>Password
                 </label>
               </div>
 
-              <!-- Remember Me and Forgot Password -->
               <div class="d-flex justify-content-between align-items-center mb-4">
                 <div class="form-check">
                   <input class="form-check-input custom-checkbox" type="checkbox" id="rememberMe">
@@ -44,14 +37,13 @@
                 <a routerLink="/forgot-password" class="auth-link">Forgot Password?</a>
               </div>
 
-              <!-- Login Button -->
               <div class="d-grid mb-4">
-                <button type="submit" class="btn auth-btn-primary">
-                  Sign In
+                <button type="submit" class="btn auth-btn-primary" [disabled]="loading || loginForm.invalid">
+                  <span *ngIf="!loading">Sign In</span>
+                  <span *ngIf="loading"><i class="fas fa-spinner fa-spin"></i></span>
                 </button>
               </div>
 
-              <!-- Register Link -->
               <div class="auth-footer text-center">
                 <p>Don't have an account?
                   <a routerLink="/register" class="auth-link">Create Account</a>

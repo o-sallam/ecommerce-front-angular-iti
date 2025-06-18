@@ -1,4 +1,3 @@
-/* Register Component - Beige Elegance Theme */
 
 /* Main container with a soft beige background */
 
@@ -13,9 +12,14 @@
   align-items: center;
   justify-content: center;
   background-color: #FAF4E7;
+  position: relative;
 }
 
-/* The main registration card with a light theme */
+.container-fluid {
+  position: relative;
+  z-index: 2;
+}
+
 .auth-card {
   background: #ffffff;
   border-radius: 16px;
@@ -27,13 +31,11 @@
   margin: 0 auto;
 }
 
-/* Card Header */
 .auth-header {
   padding: 3rem 2rem 2rem;
   text-align: center;
   border-bottom: 1px solid #FAF4E7;
 }
-
 
 .auth-title {
   color: #7A2B33;
@@ -43,13 +45,10 @@
   text-shadow: none;
   margin-bottom: 0.5rem;
 }
-
 .auth-subtitle {
   color: #93353E;
   font-size: 1.1rem;
 }
-
-/* Card Body */
 .auth-body {
   padding: 3rem;
 }
@@ -70,7 +69,36 @@
 
 .auth-link:hover {
   color: #7A2B33;
-  text-decoration: underline;
+  text-decoration: underline;}
+
+
+.form-floating > label {
+  color: #888;
+}
+
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label {
+  color: #93353E;
+}
+
+.auth-label i {
+  color: #aaa;
+  transition: color 0.3s ease;
+}
+
+.form-control:focus ~ .auth-label i {
+  color: #93353E;
+}
+
+.custom-checkbox-label {
+  color: #555;
+  font-weight: normal;
+  margin-left: 5px;
+}
+
+.custom-checkbox:checked ~ .custom-checkbox-label::before {
+    background-color: #93353E;
+    border-color: #93353E;
 }
 
 .auth-btn-primary {
@@ -94,13 +122,136 @@
   box-shadow: 0 8px 25px rgba(147, 53, 62, 0.3);
 }
 
-
-/* Keyframe Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
   }
   to {
     opacity: 1;
+  }
+}
+
+.auth-footer {
+  text-align: center;
+  animation: fadeIn 1s ease-out 0.8s both;
+}
+
+.auth-link {
+  color: #93353E;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.auth-link:hover {
+  color: #93353E;
+  text-decoration: underline;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (max-width: 768px) {
+  .auth-container {
+    padding: 1rem 0;
+  }
+
+  .auth-body {
+    padding: 2rem 1.5rem;
+  }
+
+  .auth-header {
+    padding: 2rem 1.5rem;
+  }
+
+  .social-buttons {
+    gap: 0.5rem;
+  }
+
+  .social-btn {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 576px) {
+  .auth-title {
+    font-size: 1.5rem;
+  }
+
+  .auth-subtitle {
+    font-size: 1rem;
+  }
+
+  .auth-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .auth-icon i {
+    font-size: 1.5rem;
   }
 }

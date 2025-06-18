@@ -2,10 +2,8 @@ import {Injectable} from '@angular/core'; //injectable to allow this service to 
 import {HttpClient} from '@angular/common/http';
 import{ Observable } from 'rxjs';       //observable handling asynchoronous data
 import { Product } from '../models/product.model';
-
-
+import { environment } from '../../environments/environment';
 import { of } from 'rxjs';
-
 
 @Injectable({
   providedIn:'root'             //root means this service is available throughout the application
@@ -13,7 +11,7 @@ import { of } from 'rxjs';
 
 export class ProductService{
 
-private apiUrl = "http://localhost:3000";
+private apiUrl = environment.apiUrl;
 private productsApiUrl=this.apiUrl+'/products';
   constructor(private http: HttpClient) { }       //injecting HttpClient to make HTTP requests
 
@@ -41,6 +39,10 @@ private productsApiUrl=this.apiUrl+'/products';
 
   getRelatedProducts(productId: string): Observable<Product[]> {
     return this.http.get<Product[]>(`${this.productsApiUrl}/related/${productId}`);
+  }
+
+  getFeaturedProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>(`${this.productsApiUrl}/featured`);
   }
 }
 

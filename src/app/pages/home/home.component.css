@@ -436,12 +436,12 @@
   box-shadow: 0 8px 25px rgba(147, 53, 62, 0.3);
 }
 
-.feature-icon svg {
+/* .feature-icon svg {
   stroke: currentColor;
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
-}
+} */
 
 .feature-item h3 {
   font-family: 'Georgia', serif;

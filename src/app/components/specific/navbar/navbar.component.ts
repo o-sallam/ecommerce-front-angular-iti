@@ -58,7 +58,6 @@ isMenuOpen = false;
   searchQuery = '';
   cartItemCount = 2;
 
-
   onSearch() {
     if (this.searchQuery.trim()) {
       console.log('Searching for:', this.searchQuery);
