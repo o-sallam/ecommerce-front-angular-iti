@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login-form',
@@ -9,8 +11,21 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class LoginFormComponent implements OnInit {
   welcomeName: string | null = null;
+  loginForm: FormGroup;
+  loading = false;
+  errorMsg: string | null = null;
 
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private fb: FormBuilder,
+    private authService: AuthService
+  ) {
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required]
+    });
+  }
 
   ngOnInit(): void {
     if (history.state && history.state.name) {
@@ -18,4 +33,23 @@ export class LoginFormComponent implements OnInit {
     }
   }
 
+  onSubmit() {
+    this.errorMsg = null;
+    if (this.loginForm.valid) {
+      this.loading = true;
+      const { email, password } = this.loginForm.value;
+      this.authService.login({ email, password }).subscribe({
+        next: (res) => {
+          this.loading = false;
+          // Store JWT token (assume res.token)
+          localStorage.setItem('token', res.token);
+          this.router.navigate(['/']);
+        },
+        error: (err) => {
+          this.loading = false;
+          this.errorMsg = err?.error?.message || 'Login failed.';
+        }
+      });
+    }
+  }
 }

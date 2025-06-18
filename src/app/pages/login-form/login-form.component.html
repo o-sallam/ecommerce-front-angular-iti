@@ -13,16 +13,17 @@
           </div>
 
           <div class="auth-body">
-            <form class="auth-form">
+            <div *ngIf="errorMsg" class="alert alert-danger mb-3">{{ errorMsg }}</div>
+            <form class="auth-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
               <div class="form-floating mb-4">
-                <input type="email" class="form-control" id="loginEmail" placeholder="Email Address">
+                <input type="email" class="form-control" id="loginEmail" placeholder="Email Address" formControlName="email">
                 <label for="loginEmail" class="auth-label">
                   <i class="fas fa-envelope me-2"></i>Email Address
                 </label>
               </div>
 
               <div class="form-floating mb-3">
-                <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+                <input type="password" class="form-control" id="loginPassword" placeholder="Password" formControlName="password">
                 <label for="loginPassword" class="auth-label">
                   <i class="fas fa-lock me-2"></i>Password
                 </label>
@@ -37,8 +38,9 @@
               </div>
 
               <div class="d-grid mb-4">
-                <button type="submit" class="btn auth-btn-primary">
-                  Sign In
+                <button type="submit" class="btn auth-btn-primary" [disabled]="loading || loginForm.invalid">
+                  <span *ngIf="!loading">Sign In</span>
+                  <span *ngIf="loading"><i class="fas fa-spinner fa-spin"></i></span>
                 </button>
               </div>
 
