@@ -13,13 +13,16 @@ export class CartService {
   private currentUser = '68377eac183c5f0af6fefe7c';
   constructor(private http: HttpClient) {}
 
-  addItemToCart(productId: string) {
-    this.http
-      .post(this.cartApiUrl, {
-        productId,
-        userId: this.currentUser,
-      })
-      .subscribe();
+  // Add product to cart using /cart/increase endpoint with JWT
+  increaseProductQuantity(productId: string) {
+    const token = localStorage.getItem('token');
+    return this.http.post(
+      `${environment.apiUrl}/cart/increase`,
+      { productId },
+      {
+        headers: token ? { Authorization: `Bearer ${token}` } : {},
+      }
+    );
   }
 
   getItems(): Observable<CartItem[]> {

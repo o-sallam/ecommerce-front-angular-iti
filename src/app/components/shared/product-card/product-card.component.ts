@@ -15,7 +15,15 @@ export class ProductCardComponent {
   constructor(private cartService: CartService) { }
 
   addToCart(): void {
-    //this.cartService.addItemToCart(this.product);
+    if (!this.product?.id) return;
+    this.cartService.increaseProductQuantity(this.product.id).subscribe({
+      next: () => {
+        alert('Added to cart!');
+      },
+      error: () => {
+        alert('Failed to add to cart.');
+      }
+    });
   }
 
 }
