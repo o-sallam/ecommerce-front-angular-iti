@@ -2,32 +2,42 @@
   <div class="container-fluid">
     <div class="row justify-content-center">
       <div class="col-lg-8 col-xl-7">
-        <!-- Registration Card -->
         <div class="auth-card">
-
-          <!-- Header -->
           <div class="auth-header">
             <h2 class="auth-title">Create Account</h2>
             <p class="auth-subtitle">Join our amazing community today</p>
           </div>
 
-          <!-- Body -->
           <div class="auth-body">
-            <form class="auth-form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-
-              <!-- Name Fields -->
+            <form
+              class="auth-form"
+              [formGroup]="registerForm"
+              (ngSubmit)="onSubmit()"
+            >
               <div class="row g-4 mb-4">
                 <div class="col-md-6">
-                  <div class="form-floating ">
-                    <input type="text" class="form-control" id="firstName" placeholder="First Name" formControlName="firstName">
+                  <div class="form-floating">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="firstName"
+                      placeholder="First Name"
+                      formControlName="firstName"
+                    />
                     <label for="firstName" class="auth-label">
                       <i class="fas fa-user me-2"></i>First Name
                     </label>
                   </div>
                 </div>
                 <div class="col-md-6">
-                  <div class="form-floating ">
-                    <input type="text" class="form-control" id="lastName" placeholder="Last Name" formControlName="lastName">
+                  <div class="form-floating">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="lastName"
+                      placeholder="Last Name"
+                      formControlName="lastName"
+                    />
                     <label for="lastName" class="auth-label">
                       <i class="fas fa-user me-2"></i>Last Name
                     </label>
@@ -35,29 +45,45 @@
                 </div>
               </div>
 
-              <!-- Email -->
               <div class="mb-4">
-                <div class="form-floating ">
-                  <input type="email" class="form-control" id="email" placeholder="Email Address" formControlName="email">
+                <div class="form-floating">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="Email Address"
+                    formControlName="email"
+                  />
                   <label for="email" class="auth-label">
                     <i class="fas fa-envelope me-2"></i>Email Address
                   </label>
                 </div>
               </div>
 
-              <!-- Password Fields -->
               <div class="row g-4 mb-4">
                 <div class="col-md-6">
-                  <div class="form-floating ">
-                    <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password">
+                  <div class="form-floating">
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="password"
+                      placeholder="Password"
+                      formControlName="password"
+                    />
                     <label for="password" class="auth-label">
                       <i class="fas fa-lock me-2"></i>Password
                     </label>
                   </div>
                 </div>
                 <div class="col-md-6">
-                  <div class="form-floating ">
-                    <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password" formControlName="confirmPassword">
+                  <div class="form-floating">
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="confirmPassword"
+                      placeholder="Confirm Password"
+                      formControlName="confirmPassword"
+                    />
                     <label for="confirmPassword" class="auth-label">
                       <i class="fas fa-lock me-2"></i>Confirm Password
                     </label>
@@ -65,23 +91,32 @@
                 </div>
               </div>
 
-              <!-- Checkboxes -->
               <div class="mb-5">
                 <div class="custom-checkbox-container mb-3">
-                  <input class="form-check-input custom-checkbox" type="checkbox" id="terms" formControlName="terms">
+                  <input
+                    class="form-check-input custom-checkbox"
+                    type="checkbox"
+                    id="terms"
+                    formControlName="terms"
+                  />
                   <label class="custom-checkbox-label" for="terms">
-                    I agree to the <a href="#" class="auth-link">Terms of Service</a> and <a href="#" class="auth-link">Privacy Policy</a>
+                    I agree to the <a class="auth-link">Terms of Service</a> and
+                    <a class="auth-link">Privacy Policy</a>
                   </label>
                 </div>
                 <div class="custom-checkbox-container">
-                  <input class="custom-checkbox" type="checkbox" id="newsletter" formControlName="newsletter">
+                  <input
+                    class="custom-checkbox"
+                    type="checkbox"
+                    id="newsletter"
+                    formControlName="newsletter"
+                  />
                   <label class="custom-checkbox-label" for="newsletter">
                     Subscribe to newsletter for updates and exclusive offers
                   </label>
                 </div>
               </div>
 
-              <!-- Submit Button -->
               <div class="d-grid mb-4">
                 <button type="submit" class="auth-btn auth-btn-primary">
                   <span class="btn-content">
@@ -93,17 +128,20 @@
                 </button>
               </div>
 
-              <!-- Login Link -->
               <div class="auth-footer text-center">
-                <p>Already have an account?
-                  <a routerLink="/login" class="auth-link" style="cursor: pointer;">Sign In</a>
+                <p>
+                  Already have an account?
+                  <a
+                    routerLink="/login"
+                    class="auth-link"
+                    style="cursor: pointer"
+                    >Sign In</a
+                  >
                 </p>
               </div>
-
             </form>
           </div>
         </div>
-
       </div>
     </div>
   </div>

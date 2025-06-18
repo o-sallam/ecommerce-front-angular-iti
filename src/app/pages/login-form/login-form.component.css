@@ -1,20 +1,18 @@
 /* Register Component - Beige Elegance Theme */
 
 /* Main container with a soft beige background */
+
+ .row.justify-content-center{
+  background-color:#FAF4E7;
+ }
 .auth-container {
-  min-height: 100vh;
+  min-height: 60vh;
   padding: 4rem 0;
+  margin-top: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f7f2e9; /* Soft, warm beige */
-  position: relative;
-}
-
-/* Ensure content is visible */
-.container-fluid {
-  position: relative;
-  z-index: 2;
+  background-color: #FAF4E7;
 }
 
 /* The main registration card with a light theme */
@@ -31,11 +29,12 @@
 .auth-header {
   padding: 3rem 2rem 2rem;
   text-align: center;
-  border-bottom: 1px solid #f0e9e2;
+  border-bottom: 1px solid #FAF4E7;
 }
 
+
 .auth-title {
-  color: #333;
+  color: #7A2B33;
   font-family: 'Georgia', serif;
   font-weight: 700;
   font-size: 2.5rem;
@@ -44,7 +43,7 @@
 }
 
 .auth-subtitle {
-  color: #777;
+  color: #93353E;
   font-size: 1.1rem;
 }
 
@@ -53,77 +52,23 @@
   padding: 3rem;
 }
 
-/* Form Inputs - Light Theme */
 .form-floating > .form-control {
-  background-color: #fdfdfd !important;
-  color: #333 !important;
-  border: 1px solid #ddd !important;
-  border-radius: 8px !important;
-  padding: 1rem !important;
   transition: all 0.3s ease;
-}
-
-.form-floating > .form-control:focus {
-  box-shadow: 0 0 0 3px rgba(147, 53, 62, 0.15) !important;
-  border-color: #93353E !important;
-}
-
-/* Form Labels - Light Theme */
-.form-floating > label {
-  color: #888;
-}
-
-.form-floating > .form-control:-webkit-autofill,
-.form-floating > .form-control:-webkit-autofill:hover,
-.form-floating > .form-control:-webkit-autofill:focus,
-.form-floating > .form-control:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 30px #fdfdfd inset !important;
-    -webkit-text-fill-color: #333 !important;
-}
-
-.form-floating > .form-control:focus ~ label,
-.form-floating > .form-control:not(:placeholder-shown) ~ label {
-  color: #93353E;
-}
-
-.auth-label i {
-  color: #aaa;
-  transition: color 0.3s ease;
-}
-
-.form-control:focus ~ .auth-label i {
-  color: #93353E;
-}
-
-/* Checkbox - Light Theme */
-.custom-checkbox-label {
-  color: #555;
-  font-weight: normal;
-}
-
-.custom-checkbox-label::before {
-    background-color: #fff;
-    border: 2px solid #ccc;
-}
-
-.custom-checkbox:checked ~ .custom-checkbox-label::before {
-    background-color: #93353E;
-    border-color: #93353E;
 }
 
 .auth-link {
   color: #93353E;
   font-weight: 600;
-  text-decoration: none; /* Remove underline */
-  background-color: transparent; /* Ensure no background */
+  text-decoration: none;
+  background-color: transparent;
   padding: 0;
   border: none;
   transition: color 0.3s ease;
 }
 
 .auth-link:hover {
-  color: #7A2B33; /* Darken color on hover */
-  text-decoration: underline; /* Add underline on hover for clarity */
+  color: #7A2B33;
+  text-decoration: underline;
 }
 
 .auth-btn-primary {
@@ -147,10 +92,6 @@
   box-shadow: 0 8px 25px rgba(147, 53, 62, 0.3);
 }
 
-/* Footer Link */
-.auth-footer p {
-  color: #555;
-}
 
 /* Keyframe Animations */
 @keyframes fadeIn {
