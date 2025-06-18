@@ -47,29 +47,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
   ];
 
-  // featuredProducts = [
-  //   {
-  //     id: 1,
-  //     name: 'Victorian Mahogany Dining Table',
-  //     price: 1299.99,
-  //     reviews: 24,
-  //     image: 'https://images.pexels.com/photos/1148955/pexels-photo-1148955.jpeg?auto=compress&cs=tinysrgb&w=400'
-  //   },
-  //   {
-  //     id: 2,
-  //     name: 'Antique Velvet Armchair',
-  //     price: 899.99,
-  //     reviews: 18,
-  //     image: 'https://images.pexels.com/photos/1099816/pexels-photo-1099816.jpeg?auto=compress&cs=tinysrgb&w=400'
-  //   },
-  //   {
-  //     id: 3,
-  //     name: 'Classic Four-Poster Bed',
-  //     price: 1899.99,
-  //     reviews: 31,
-  //     image: 'https://images.pexels.com/photos/1743229/pexels-photo-1743229.jpeg?auto=compress&cs=tinysrgb&w=400'
-  //   }
-  // ];
+  
 
 features = [
 {
