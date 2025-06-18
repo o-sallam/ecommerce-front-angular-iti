@@ -1,7 +1,7 @@
 <!-- <img class="item-image" [src]="item.image" [alt]="item.name"> -->
 
 <div class="item-details">
-  <h4>{{ item.name }}</h4>
+  <h4>{{ item.productId.name }}</h4>
   <p>£{{ item.price }}</p>
 </div>
 
@@ -11,10 +11,8 @@
   <button (click)="increment.emit()">+</button>
 </div>
 
-<div class="item-total">
-  £{{ item.price * item.quantity }}
-</div>
+<div class="item-total">£{{ (item.price * item.quantity).toFixed(2) }}</div>
 
 <button class="remove-btn" (click)="delete.emit()">
-  <img src="assets/icons/trash.png" alt="Remove item">
+  <img src="assets/icons/trash.png" alt="Remove item" />
 </button>

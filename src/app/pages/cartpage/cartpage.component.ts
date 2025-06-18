@@ -6,45 +6,70 @@ import { CartItem } from '../../models/cart-item.model';
   selector: 'app-cartpage',
   standalone: false,
   templateUrl: './cartpage.component.html',
-  styleUrl: './cartpage.component.css',
+  styleUrls: ['./cartpage.component.css'],
 })
 export class CartpageComponent implements OnInit {
-  items: CartItem[] = [];
+  cartItems: CartItem[] = [];
   total: number = 0;
   totalItems: number = 0;
 
-  constructor(private cartService: CartService) {}
+  constructor(protected cartService: CartService) {}
 
-  ngOnInit(): void {
-    this.cartService.getItems().subscribe((items) => {
-      this.items = items;
-      this.total = this.cartService.total;
-      this.totalItems = this.cartService.totalItems;
-    });
-  }
-
-  loadCart() {
-    this.cartService.getItems().subscribe((items) => {
-      this.items = items;
-      this.total = this.cartService.getTotal();
-    });
-  }
-  //   addToCart(productId:string) {
-  //   this.cartService.addItemToCart(productId);
-  //   this.loadCart();
-  // }
   handleIncrement(productId: string) {
-    this.cartService.incrementQuantity(productId);
-    this.loadCart();
+    const item = this.cartItems.find((item) => item.productId.id === productId);
+    if (!item) return;
+    const prevQuantity = item.quantity;
+    const prevTotal = this.total;
+    // Optimistic UI update
+    item.quantity++;
+    this.totalItems++;
+    this.total += item.productId.price;
+    this.cartService.increaseProductQuantity(productId).subscribe({
+      next: (res: any) => {
+        if (res && res.total !== undefined && res.totalItems !== undefined) {
+          this.total = res.total;
+          this.totalItems = res.totalItems;
+        }
+      },
+      error: () => {
+        // Revert optimistic update on error
+        item.quantity = prevQuantity;
+        this.totalItems--;
+        this.total = prevTotal;
+      },
+    });
   }
 
   handleDecrement(productId: string) {
-    this.cartService.decrementQuantity(productId);
-    this.loadCart();
+    const item = this.cartItems.find((item) => item.productId.id === productId);
+    if (!item || item.quantity <= 1) return; // Prevent decrement below 1
+    const prevQuantity = item.quantity;
+    const prevTotal = this.total;
+    // Optimistic UI update
+    item.quantity--;
+    this.totalItems--;
+    this.total -= item.productId.price;
+    this.cartService.decreaseProductQuantity(productId).subscribe({
+      next: (res: any) => {
+        if (res && res.total !== undefined && res.totalItems !== undefined) {
+          this.total = res.total;
+          this.totalItems = res.totalItems;
+        }
+      },
+      error: () => {
+        // Revert optimistic update on error
+        item.quantity = prevQuantity;
+        this.totalItems++;
+        this.total = prevTotal;
+      },
+    });
   }
 
-  handleDelete(productId: string) {
-    this.cartService.deleteItemFromCart(productId);
-    this.loadCart();
+  ngOnInit(): void {
+    this.cartService.getCart().subscribe((cart) => {
+      this.cartItems = cart.items;
+      this.total = cart.total;
+      this.totalItems = cart.totalItems;
+    });
   }
 }

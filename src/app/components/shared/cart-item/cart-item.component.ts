@@ -1,17 +1,27 @@
-import { Component, Input, Output,EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CartItem } from '../../../models/cart-item.model';
 
 @Component({
   selector: 'app-cart-item',
   standalone: false,
   templateUrl: './cart-item.component.html',
-  styleUrl: './cart-item.component.css'
+  styleUrl: './cart-item.component.css',
 })
 export class CartItemComponent {
-
   @Input() item!: CartItem;
-  @Output() increment = new EventEmitter<void>();
-  @Output() decrement = new EventEmitter<void>();
-  @Output() delete = new EventEmitter<void>();
+  @Output() increment = new EventEmitter<string>();
+  @Output() decrement = new EventEmitter<string>();
+  @Output() delete = new EventEmitter<any>();
 
+  handleIncrement() {
+    this.increment.emit(this.item.productId.id);
+  }
+
+  handleDecrement() {
+    this.decrement.emit();
+  }
+
+  handleDelete() {
+    this.delete.emit();
+  }
 }

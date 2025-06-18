@@ -1,7 +1,8 @@
 <app-cart-item
   *ngFor="let item of items"
   [item]="item"
-  (increment)="onIncrement(item.id)"
-  (decrement)="onDecrement(item.id)"
-  (delete)="onDelete(item.id)">
+  (increment)="handleIncrement(item.productId.id)"
+  (decrement)="handleDecrement(item.productId.id)"
+  (delete)="handleDelete(item.productId.id)"
+>
 </app-cart-item>

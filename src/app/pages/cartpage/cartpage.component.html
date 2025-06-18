@@ -1,26 +1,26 @@
-<ng-container *ngIf="items.length > 0; else emptyCart">
+<ng-container *ngIf="cartItems.length > 0; else emptyCart">
   <div class="cart-page-container">
     <div class="cart-header">
       <h3>Shopping Cart</h3>
     </div>
     <div class="cart-items">
-      <app-cart 
-        [items]="items" 
+      <app-cart
+        [items]="cartItems"
         (increment)="handleIncrement($event)"
         (decrement)="handleDecrement($event)"
-        (delete)="handleDelete($event)">
+      >
       </app-cart>
     </div>
     <div class="cart-total">
       <div>Total Items: {{ totalItems }}</div>
-      <div>Total: £{{ total }}</div>
+      <div>Total: £{{ total.toFixed(2) }}</div>
     </div>
     <button class="checkout-btn">Proceed to Checkout</button>
   </div>
 </ng-container>
 
 <ng-template #emptyCart class="">
-  <div class="empty-cart-container ">
+  <div class="empty-cart-container">
     <p class="empty-cart-message fs-1">Your cart is Empty</p>
     <a routerLink="/products" class="shop-now-btn">Shop Now</a>
   </div>

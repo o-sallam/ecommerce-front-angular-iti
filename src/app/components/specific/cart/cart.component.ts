@@ -5,40 +5,29 @@ import { CartItem } from '../../../models/cart-item.model';
   selector: 'app-cart',
   standalone: false,
   templateUrl: './cart.component.html',
-  styleUrl: './cart.component.css'
+  styleUrl: './cart.component.css',
 })
-export class CartComponent  {
-
+export class CartComponent {
   @Input() items: CartItem[] = [];
-  
   @Output() increment = new EventEmitter<string>();
   @Output() decrement = new EventEmitter<string>();
-  @Output() delete = new EventEmitter<any>();
 
+  handleIncrement(productId: string) {
+    this.increment.emit(productId);
+  }
+
+  handleDecrement(productId: string) {
+    this.decrement.emit(productId);
+  }
+
+  handleDelete(productId: string) {
+    // Should be handled by parent or via Output, but kept for compatibility
+  }
 
   get total(): number {
-   return this.items.reduce((acc, item) => acc + item.price * item.quantity, 0);
-
-}
-
-
-  onIncrement(id: string) {
-    this.increment.emit(id);
+    return this.items.reduce(
+      (acc, item) => acc + item.price * item.quantity,
+      0
+    );
   }
-  onDecrement(id: string) {
-    this.decrement.emit(id);
-  }
-  onDelete(item: any) {
-    this.delete.emit(item);
-  }
-
-  //   addItem(newItem: CartItem) {
-  //   const existing = this.items.find((i) => i.id === newItem.id);
-  //   if (existing) {
-  //     existing.quantity += newItem.quantity;
-  //   } else {
-  //     this.items.push({ ...newItem });
-  //   }
-  // }
-
 }
