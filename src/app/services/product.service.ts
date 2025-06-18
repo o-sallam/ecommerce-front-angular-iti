@@ -20,28 +20,7 @@ private productsApiUrl=this.apiUrl+'/products';
   getAllProducts(){//async function to fetch all products
   const result= this.http.get<Product[]>(this.productsApiUrl); //get request to fetch all products
   return result;
-  //  return of([
-  //   {
-  //     id: 1,
-  //     name: 'Sample Product',
-  //     price: 99.99,
-  //     category: 'Electronics',
-  //     imageUrl: 'https://via.placeholder.com/150',
-  //     description: 'A sample electronic product',
-  //     image: 'https://via.placeholder.com/150',
-  //     inStock: true
-  //   },
-  //   {
-  //     id: 2,
-  //     name: 'Another Product',
-  //     price: 49.5,
-  //     category: 'Books',
-  //     imageUrl: 'https://via.placeholder.com/150',
-  //     description: 'A sample book product',
-  //     image: 'https://via.placeholder.com/150',
-  //     inStock: false
-  //   },
-  // ]);
+
    }
 
   getProductById(id: string): Observable<Product> {
@@ -58,6 +37,10 @@ private productsApiUrl=this.apiUrl+'/products';
 
   deleteProductById(id:string):Observable<any>{
     return this.http.delete(`${this.productsApiUrl}/${id}`);
+  }
+
+  getRelatedProducts(productId: string): Observable<Product[]> {
+    return this.http.get<Product[]>(`${this.productsApiUrl}/related/${productId}`);
   }
 }
 
