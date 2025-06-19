@@ -23,6 +23,8 @@ import { ContactusComponent } from './pages/contactus/contactus.component';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { AboutusComponent } from './pages/aboutus/aboutus.component';
+import { PaymentFormComponent } from './components/shared/payment-form/payment-form.component';
+import { PaymentContainerComponent } from './components/specific/payment-container/payment-container.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +44,13 @@ import { AboutusComponent } from './pages/aboutus/aboutus.component';
     ContactusComponent,
     FooterComponent,
     AboutusComponent,
+<<<<<<< HEAD
     ExploreCollectionComponent,
+=======
+    PaymentFormComponent,
+    PaymentContainerComponent,
+
+>>>>>>> 7f91a4db3cfb92f2e335ddbf68c312e6d072892c
   ],
   imports: [
     BrowserModule,
