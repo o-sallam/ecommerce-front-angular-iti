@@ -9,16 +9,21 @@ import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { ContactusComponent } from './pages/contactus/contactus.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HomeComponent } from './pages/home/home.component';
+import { CategoryComponent } from './pages/category/category.component';
+import { PaymentContainerComponent } from './components/specific/payment-container/payment-container.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'cart', component: CartpageComponent },
+  { path: 'products/category/:categoryName', component: ProductListComponent },
   { path: 'products', component: ProductListComponent },
   { path: 'products/:id', component: ProductDetailComponent },
   { path: 'register', component: RegisterFormComponent },
   { path: 'login', component: LoginFormComponent },
   { path: 'aboutus', component: AboutusComponent },
   { path: 'contactus', component: ContactusComponent },
+  { path: 'category/:type', component: CategoryComponent},
+  {path: 'payment', component: PaymentContainerComponent },
   { path: '**', component: NotFoundComponent },
 ];
 

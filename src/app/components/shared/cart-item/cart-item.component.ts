@@ -22,6 +22,6 @@ export class CartItemComponent {
   }
 
   handleDelete() {
-    this.delete.emit();
+    this.delete.emit(this.item.productId.id);
   }
 }

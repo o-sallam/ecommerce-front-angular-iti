@@ -59,16 +59,19 @@
       <h2>Explore Our Collections</h2>
       <div class="categories-grid">
         <div class="category-card" *ngFor="let category of categories">
-          <img [src]="category.image" [alt]="category.name">
-          <div class="category-overlay">
-            <h3>{{category.name}}</h3>
-            <p>{{category.description}}</p>
-            <a [routerLink]="['/products', category.slug]" class="category-link">Explore</a>
-          </div>
+          <a [routerLink]="['/category', category.slug]" >
+            <img [src]="category.image" [alt]="category.name">
+            <div class="category-overlay">
+              <h3>{{category.name}}</h3>
+              <p>{{category.description}}</p>
+              <p class="category-link">Explore</p>
+            </div>
+          </a>
         </div>
       </div>
     </div>
   </section>
+  <app-explore-collection></app-explore-collection>
 
   <section class="featured-products">
     <div class="container">

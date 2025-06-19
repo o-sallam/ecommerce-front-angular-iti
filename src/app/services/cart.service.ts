@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, BehaviorSubject, tap, catchError, throwError } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { Cart } from '../models/cart.model';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -90,4 +91,13 @@ export class CartService {
   clearCartOnLogout(): void {
     this.cartItemCount.next(0);
   }
-}
+
+  getTotal(): Observable<number> {
+    return this.getCart().pipe(
+      map((cart:Cart)=>{
+        return cart.items.reduce((total, item) => {
+          return total + item.price * item.quantity;
+        }, 0);
+      })
+    )
+}}

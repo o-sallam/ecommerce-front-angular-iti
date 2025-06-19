@@ -34,14 +34,14 @@
           </svg>
         </a>
         <div class="dropdown-menu" [class.show]="showProductsDropdown">
-          <a routerLink="/products/bedroom" class="dropdown-item">Bedroom</a>
-          <a routerLink="/products/living-room" class="dropdown-item"
-            >Living Room</a
+          <a [routerLink]="['/category', 'bedroom']" class="dropdown-item">Bedroom</a>
+          <a [routerLink]="['/category', 'tables']" class="dropdown-item"
+            >Tables</a
           >
-          <a routerLink="/products/dining-room" class="dropdown-item"
-            >Dining Room</a
+          <a [routerLink]="['/category', 'chairs']" class="dropdown-item"
+            >Chairs</a
           >
-          <a routerLink="/products/accessories" class="dropdown-item"
+          <a [routerLink]="['/category', 'accessories']" class="dropdown-item"
             >Accessories</a
           >
         </div>
