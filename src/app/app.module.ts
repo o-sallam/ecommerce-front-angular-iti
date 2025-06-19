@@ -44,13 +44,9 @@ import { PaymentContainerComponent } from './components/specific/payment-contain
     ContactusComponent,
     FooterComponent,
     AboutusComponent,
-<<<<<<< HEAD
     ExploreCollectionComponent,
-=======
     PaymentFormComponent,
     PaymentContainerComponent,
-
->>>>>>> 7f91a4db3cfb92f2e335ddbf68c312e6d072892c
   ],
   imports: [
     BrowserModule,
