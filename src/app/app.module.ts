@@ -23,6 +23,7 @@ import { ContactusComponent } from './pages/contactus/contactus.component';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { AboutusComponent } from './pages/aboutus/aboutus.component';
+import { CategoryComponent } from './pages/category/category.component';
 import { PaymentFormComponent } from './components/shared/payment-form/payment-form.component';
 import { PaymentContainerComponent } from './components/specific/payment-container/payment-container.component';
 @NgModule({
@@ -44,6 +45,7 @@ import { PaymentContainerComponent } from './components/specific/payment-contain
     ContactusComponent,
     FooterComponent,
     AboutusComponent,
+    CategoryComponent,
     ExploreCollectionComponent,
     PaymentFormComponent,
     PaymentContainerComponent,

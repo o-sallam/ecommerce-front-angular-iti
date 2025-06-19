@@ -18,7 +18,6 @@ export class ProductDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private productService: ProductService,
     private cartService: CartService
-
   ) {}
 
   ngOnInit(): void {
@@ -60,6 +59,15 @@ export class ProductDetailComponent implements OnInit {
   }
 
   addToCart(): void {
+    if (!this.product?.id) return;
+    this.cartService.increaseProductQuantity(this.product.id).subscribe({
+      next: () => {
+        alert('Added to cart!');
+      },
+      error: () => {
+        alert('Failed to add to cart.');
+      }
+    });
     console.log('Added from details:', this.product);
   }
 }

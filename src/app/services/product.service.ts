@@ -4,6 +4,7 @@ import{ Observable } from 'rxjs';       //observable handling asynchoronous data
 import { Product } from '../models/product.model';
 import { environment } from '../../environments/environment';
 import { of } from 'rxjs';
+import { map } from 'rxjs/operators'
 
 @Injectable({
   providedIn:'root'             //root means this service is available throughout the application
@@ -54,6 +55,9 @@ private productsApiUrl=this.apiUrl+'/products';
     if (token) headers = headers.set('Authorization', `Bearer ${token}`);
     return this.http.get<Product[]>(`${this.productsApiUrl}/featured`, { headers });
   }
+  
+ getProductByCategryName(categoryName: string): Observable<Product[]> {
+  return this.http.get<Product[]>(`${this.productsApiUrl}/category/${categoryName}`);
 
   getProductsByCategoryName(categoryName: string): Observable<Product[]> {
     const token = localStorage.getItem('token');
@@ -62,4 +66,6 @@ private productsApiUrl=this.apiUrl+'/products';
     return this.http.get<Product[]>(`${this.productsApiUrl}/category/${categoryName}`, { headers });
   }
 }
+}
+
 
