@@ -34,7 +34,7 @@ import { CategoryComponent } from './pages/category/category.component';
     ProductDetailComponent,
     RegisterFormComponent,
     LoginFormComponent,
-    CheckoutPageComponent,
+    CheckoutPageComponent,          
     CheckoutContainerComponent,
     CheckoutFormComponent,
     HomeComponent,
@@ -51,8 +51,7 @@ import { CategoryComponent } from './pages/category/category.component';
     ReactiveFormsModule,
     CommonModule,
     FormsModule,
-
-
+    
 
   ],
   providers: [],

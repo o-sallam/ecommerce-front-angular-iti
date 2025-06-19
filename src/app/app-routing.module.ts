@@ -10,6 +10,7 @@ import { ContactusComponent } from './pages/contactus/contactus.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CategoryComponent } from './pages/category/category.component';
+import { CheckoutPageComponent } from './pages/checkout-page/checkout-page.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'aboutus', component: AboutusComponent },
   { path: 'contactus', component: ContactusComponent },
   { path: 'category/:type', component: CategoryComponent},
+  { path: 'checkout', component: CheckoutPageComponent},
   { path: '**', component: NotFoundComponent },
 ];
 
