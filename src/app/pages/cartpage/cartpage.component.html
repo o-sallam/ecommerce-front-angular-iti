@@ -8,6 +8,7 @@
         [items]="cartItems"
         (increment)="handleIncrement($event)"
         (decrement)="handleDecrement($event)"
+        (delete)="handleDelete($event)"
       >
       </app-cart>
     </div>
@@ -15,7 +16,9 @@
       <div>Total Items: {{ totalItems }}</div>
       <div>Total: £{{ total.toFixed(2) }}</div>
     </div>
-    <button class="checkout-btn">Proceed to Checkout</button>
+
+    <button routerLink="/payment" class="checkout-btn">Proceed to Checkout</button>
+   
   </div>
 </ng-container>
 
