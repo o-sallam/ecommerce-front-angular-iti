@@ -21,6 +21,8 @@ import { ContactusComponent } from './pages/contactus/contactus.component';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { AboutusComponent } from './pages/aboutus/aboutus.component';
+import { PaymentFormComponent } from './components/shared/payment-form/payment-form.component';
+import { PaymentContainerComponent } from './components/specific/payment-container/payment-container.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +42,8 @@ import { AboutusComponent } from './pages/aboutus/aboutus.component';
     ContactusComponent,
     FooterComponent,
     AboutusComponent,
+    PaymentFormComponent,
+    PaymentContainerComponent,
 
   ],
   imports: [
