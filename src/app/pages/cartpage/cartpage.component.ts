@@ -65,6 +65,33 @@ export class CartpageComponent implements OnInit {
     });
   }
 
+  handleDelete(productId: string) {
+    const index = this.cartItems.findIndex((item) => item.productId.id === productId);
+    if (index === -1) return;
+    const removedItem = this.cartItems[index];
+    const prevCartItems = [...this.cartItems];
+    const prevTotal = this.total;
+    const prevTotalItems = this.totalItems;
+    // Optimistic UI update
+    this.cartItems.splice(index, 1);
+    this.total -= removedItem.price * removedItem.quantity;
+    this.totalItems -= removedItem.quantity;
+    this.cartService.deleteItemFromCart(productId).subscribe({
+      next: (res: any) => {
+        if (res && res.total !== undefined && res.totalItems !== undefined) {
+          this.total = res.total;
+          this.totalItems = res.totalItems;
+        }
+      },
+      error: () => {
+        // Revert optimistic update on error
+        this.cartItems = prevCartItems;
+        this.total = prevTotal;
+        this.totalItems = prevTotalItems;
+      },
+    });
+  }
+
   ngOnInit(): void {
     this.cartService.getCart().subscribe((cart) => {
       this.cartItems = cart.items;

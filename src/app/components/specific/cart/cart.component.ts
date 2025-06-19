@@ -11,6 +11,7 @@ export class CartComponent {
   @Input() items: CartItem[] = [];
   @Output() increment = new EventEmitter<string>();
   @Output() decrement = new EventEmitter<string>();
+  @Output() delete = new EventEmitter<string>();
 
   handleIncrement(productId: string) {
     this.increment.emit(productId);
@@ -21,7 +22,7 @@ export class CartComponent {
   }
 
   handleDelete(productId: string) {
-    // Should be handled by parent or via Output, but kept for compatibility
+    this.delete.emit(productId);
   }
 
   get total(): number {
