@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ExploreCollectionComponent } from './components/explore-collection/explore-collection.component';
+import { RouterModule } from '@angular/router';
 import { ProductListComponent } from './components/specific/product-list/product-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductCardComponent } from './components/shared/product-card/product-card.component';
@@ -40,7 +42,7 @@ import { AboutusComponent } from './pages/aboutus/aboutus.component';
     ContactusComponent,
     FooterComponent,
     AboutusComponent,
-
+    ExploreCollectionComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,9 +51,7 @@ import { AboutusComponent } from './pages/aboutus/aboutus.component';
     ReactiveFormsModule,
     CommonModule,
     FormsModule,
-
-
-
+    RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

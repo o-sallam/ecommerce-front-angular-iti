@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../../../services/product.service';
-// Update the import path and casing if needed
 import { Product } from '../../../models/product.model';
 
 @Component({
@@ -14,16 +14,21 @@ export class ProductListComponent implements OnInit {
   loading: boolean = true;
   error = '';
 
-  constructor(private productService: ProductService) {} //dependency injection of ProductService
-  ngOnInit(): void {
-    //ngonit lifecycle hook to load products when the component initializes
+  constructor(private productService: ProductService, private route: ActivatedRoute) {}
 
-    this.loadProducts();
+  ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      const categoryName = params.get('categoryName');
+      if (categoryName) {
+        this.loadProductsByCategory(categoryName);
+      } else {
+        this.loadProducts();
+      }
+    });
   }
 
   loadProducts(): void {
     this.loading = true;
-
     this.productService.getAllProducts().subscribe({
       next: (data) => {
         this.products = data;
@@ -31,8 +36,22 @@ export class ProductListComponent implements OnInit {
       },
       error: (err) => {
         console.log(err);
-
         this.error = 'Error loading products';
+        this.loading = false;
+      },
+    });
+  }
+
+  loadProductsByCategory(categoryName: string): void {
+    this.loading = true;
+    this.productService.getProductsByCategoryName(categoryName).subscribe({
+      next: (data) => {
+        this.products = data;
+        this.loading = false;
+      },
+      error: (err) => {
+        console.log(err);
+        this.error = 'Error loading products for this category';
         this.loading = false;
       },
     });

@@ -54,5 +54,12 @@ private productsApiUrl=this.apiUrl+'/products';
     if (token) headers = headers.set('Authorization', `Bearer ${token}`);
     return this.http.get<Product[]>(`${this.productsApiUrl}/featured`, { headers });
   }
+
+  getProductsByCategoryName(categoryName: string): Observable<Product[]> {
+    const token = localStorage.getItem('token');
+    let headers = new HttpHeaders();
+    if (token) headers = headers.set('Authorization', `Bearer ${token}`);
+    return this.http.get<Product[]>(`${this.productsApiUrl}/category/${categoryName}`, { headers });
+  }
 }
 
