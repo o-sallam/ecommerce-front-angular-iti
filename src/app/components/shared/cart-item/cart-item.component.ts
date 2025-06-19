@@ -11,7 +11,7 @@ export class CartItemComponent {
   @Input() item!: CartItem;
   @Output() increment = new EventEmitter<string>();
   @Output() decrement = new EventEmitter<string>();
-  @Output() delete = new EventEmitter<any>();
+  @Output() delete = new EventEmitter<string>();
 
   handleIncrement() {
     this.increment.emit(this.item.productId.id);

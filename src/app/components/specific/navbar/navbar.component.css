@@ -176,6 +176,23 @@
   align-items: center;
 }
 
+.cart-count {
+  position: absolute;
+  top: -8px; 
+  right: -8px;
+  background-color: #ff4d4f; /* A nice red color */
+  color: white;
+  border-radius: 50%;
+  padding: 3px 3px;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: bold;
+  /* border: 1px solid white; */
+  min-width: 20px; /* Ensures the circle looks good even with one digit */
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* A subtle shadow */
+}
+
 .cart-icon {
   color: #e1d8c9;
   transition: color 0.3s ease;
@@ -190,7 +207,7 @@
   font-weight: bold;
   width: 100px;
   height: 40px;
-  border: 2px solid #e1d8c9;
+  border: 1px solid #e1d8c9;
   background-color: #93353e;
   color: #e1d8c9;
   border-radius: 7px;

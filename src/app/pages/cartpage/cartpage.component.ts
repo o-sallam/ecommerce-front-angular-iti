@@ -42,7 +42,7 @@ export class CartpageComponent implements OnInit {
 
   handleDecrement(productId: string) {
     const item = this.cartItems.find((item) => item.productId.id === productId);
-    if (!item || item.quantity <= 1) return; // Prevent decrement below 1
+    if (!item || item.quantity <= 1) {this.deleteItem(productId); return}; // Prevent decrement below 1
     const prevQuantity = item.quantity;
     const prevTotal = this.total;
     // Optimistic UI update
@@ -68,8 +68,31 @@ export class CartpageComponent implements OnInit {
   ngOnInit(): void {
     this.cartService.getCart().subscribe((cart) => {
       this.cartItems = cart.items;
-      this.total = cart.total;
-      this.totalItems = cart.totalItems;
+      this.calculateTotals();
+    });
+  }
+
+  deleteItem(productId: string): void {
+    this.cartService.deleteItemFromCart(productId).subscribe(() => {
+      this.cartItems = this.cartItems.filter(item => item.productId.id !== productId);
+      this.calculateTotals();
+    });
+  }
+
+  calculateTotals(): void {
+    this.total = this.cartItems.reduce((acc, item) => acc + (item.productId.price * item.quantity), 0);
+    this.totalItems = this.cartItems.reduce((acc, item) => acc + item.quantity, 0);
+  }
+  clearCart() {
+    this.cartService.deleteAllItems().subscribe({
+      next: () => {
+        this.cartItems = []; // Clear the local cart items array
+        this.calculateTotals(); // Recalculate totals to update the UI
+        console.log('Cart cleared successfully');
+      },
+      error: (err) => {
+        console.error('Failed to clear cart:', err);
+      }
     });
   }
 }

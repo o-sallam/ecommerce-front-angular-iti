@@ -3,11 +3,15 @@
     <div class="cart-header">
       <h3>Shopping Cart</h3>
     </div>
+    <div class="remove-all">
+      <button (click)="clearCart()">Remove All</button>
+    </div>
     <div class="cart-items">
       <app-cart
         [items]="cartItems"
         (increment)="handleIncrement($event)"
         (decrement)="handleDecrement($event)"
+        (delete)="deleteItem($event)"
       >
       </app-cart>
     </div>
