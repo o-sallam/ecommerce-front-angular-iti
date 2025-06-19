@@ -21,6 +21,7 @@ import { ContactusComponent } from './pages/contactus/contactus.component';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { AboutusComponent } from './pages/aboutus/aboutus.component';
+import { CategoryComponent } from './pages/category/category.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +41,7 @@ import { AboutusComponent } from './pages/aboutus/aboutus.component';
     ContactusComponent,
     FooterComponent,
     AboutusComponent,
+    CategoryComponent,
 
   ],
   imports: [
