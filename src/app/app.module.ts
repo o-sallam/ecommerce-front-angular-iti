@@ -57,12 +57,7 @@ import { PaymentContainerComponent } from './components/specific/payment-contain
     ReactiveFormsModule,
     CommonModule,
     FormsModule,
-<<<<<<< HEAD
-    
-
-=======
     RouterModule,
->>>>>>> be275f1520a9b546afd5956f9fac9babe504cf36
   ],
   providers: [],
   bootstrap: [AppComponent]
