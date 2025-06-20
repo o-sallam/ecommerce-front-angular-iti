@@ -27,6 +27,9 @@ const routes: Routes = [
   { path: 'checkout', component: CheckoutPageComponent},
   { path: 'wishlist', component: WishlistComponent },
   // {path: 'payment', component: PaymentContainerComponent },
+  { path: 'category/:type', component: CategoryComponent},
+  { path: 'checkout', component: CheckoutPageComponent},
+  {path: 'payment', component: PaymentContainerComponent },
   { path: '**', component: NotFoundComponent },
 ];
 
