@@ -25,6 +25,9 @@ const routes: Routes = [
   // { path: 'category/:type', component: CategoryComponent},
   { path: 'checkout', component: CheckoutPageComponent},
   // {path: 'payment', component: PaymentContainerComponent },
+  { path: 'category/:type', component: CategoryComponent},
+  { path: 'checkout', component: CheckoutPageComponent},
+  {path: 'payment', component: PaymentContainerComponent },
   { path: '**', component: NotFoundComponent },
 ];
 
