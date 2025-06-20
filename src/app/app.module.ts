@@ -26,6 +26,8 @@ import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { CategoryComponent } from './pages/category/category.component';
 import { PaymentFormComponent } from './components/shared/payment-form/payment-form.component';
 import { PaymentContainerComponent } from './components/specific/payment-container/payment-container.component';
+import { WishlistComponent } from './pages/wishlist/wishlist.component';
+import { WishlistButtonComponent } from './components/shared/wishlist-button/wishlist-button.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,6 +51,8 @@ import { PaymentContainerComponent } from './components/specific/payment-contain
     ExploreCollectionComponent,
     PaymentFormComponent,
     PaymentContainerComponent,
+    WishlistComponent,
+    WishlistButtonComponent
   ],
   imports: [
     BrowserModule,
@@ -58,6 +62,7 @@ import { PaymentContainerComponent } from './components/specific/payment-contain
     CommonModule,
     FormsModule,
     RouterModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
