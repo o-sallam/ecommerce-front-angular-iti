@@ -3,6 +3,6 @@
   [item]="item"
   (increment)="handleIncrement(item.productId.id)"
   (decrement)="handleDecrement(item.productId.id)"
-  (delete)="handleDelete(item.productId.id)"
+  (delete)="handleDelete($event)"
 >
 </app-cart-item>
