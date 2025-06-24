@@ -1,6 +1,8 @@
-<div class="product-card" *ngIf="product">
-  <div class="product-image">
-    <a [routerLink]="['/products', product.id]">
+<body class="body">
+
+  <div class="product-card" *ngIf="product">
+    <div class="product-image">
+      <a [routerLink]="['/products', product.id]">
       <img [src]="product.thumbnail" [alt]="product.name" />
     </a>
     <div class="product-overlay">
@@ -24,3 +26,5 @@
     </div>
   </div>
 </div>
+
+    </body>
