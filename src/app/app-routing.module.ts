@@ -12,6 +12,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { CategoryComponent } from './pages/category/category.component';
 import { CheckoutPageComponent } from './pages/checkout-page/checkout-page.component';
 import { PaymentContainerComponent } from './components/specific/payment-container/payment-container.component';
+import { OrderConfirmationComponent } from './pages/order-confirmation/order-confirmation.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'cart', component: CartpageComponent },
@@ -22,12 +23,11 @@ const routes: Routes = [
   { path: 'login', component: LoginFormComponent },
   { path: 'aboutus', component: AboutusComponent },
   { path: 'contactus', component: ContactusComponent },
-  // { path: 'category/:type', component: CategoryComponent},
-  { path: 'checkout', component: CheckoutPageComponent},
-  // {path: 'payment', component: PaymentContainerComponent },
   { path: 'category/:type', component: CategoryComponent},
   { path: 'checkout', component: CheckoutPageComponent},
   {path: 'payment', component: PaymentContainerComponent },
+  {path:"orderconfirm",component:OrderConfirmationComponent},
+  { path: 'checkout', component: CheckoutPageComponent},
   { path: '**', component: NotFoundComponent },
 ];
 

@@ -49,6 +49,7 @@ import { PaymentContainerComponent } from './components/specific/payment-contain
     ExploreCollectionComponent,
     PaymentFormComponent,
     PaymentContainerComponent,
+
   ],
   imports: [
     BrowserModule,
