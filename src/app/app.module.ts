@@ -23,10 +23,10 @@ import { CommonModule } from '@angular/common';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { CategoryComponent } from './pages/category/category.component';
-import { PaymentFormComponent } from './components/shared/payment-form/payment-form.component';
-import { PaymentContainerComponent } from './components/specific/payment-container/payment-container.component';
 import { PaymentComponent } from './pages/payment/payment.component';
 import { ShippingComponent } from './pages/shipping/shipping.component';
+import { WishlistComponent } from './pages/wishlist/wishlist.component';
+import { WishlistButtonComponent } from './components/shared/wishlist-button/wishlist-button.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +51,8 @@ import { ShippingComponent } from './pages/shipping/shipping.component';
     PaymentContainerComponent,
     PaymentComponent,
     ShippingComponent,
-
+    WishlistComponent,
+    WishlistButtonComponent
   ],
   imports: [
     BrowserModule,
@@ -61,6 +62,7 @@ import { ShippingComponent } from './pages/shipping/shipping.component';
     CommonModule,
     FormsModule,
     RouterModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -10,7 +10,7 @@ import { ContactusComponent } from './pages/contactus/contactus.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CategoryComponent } from './pages/category/category.component';
-import { PaymentContainerComponent } from './components/specific/payment-container/payment-container.component';
+import { WishlistComponent } from './pages/wishlist/wishlist.component';
 import { OrderConfirmationComponent } from './pages/order-confirmation/order-confirmation.component';
 import { ShippingComponent } from './pages/shipping/shipping.component';
 import { PaymentComponent } from './pages/payment/payment.component';
@@ -25,10 +25,10 @@ const routes: Routes = [
   { path: 'aboutus', component: AboutusComponent },
   { path: 'contactus', component: ContactusComponent },
   { path: 'category/:type', component: CategoryComponent },
-  { path: 'payment', component: PaymentContainerComponent },
   { path: 'orderconfirm', component: OrderConfirmationComponent },
-  {path: 'checkout/shipping',component: ShippingComponent},
+  { path: 'checkout/shipping',component: ShippingComponent},
   { path: 'checkout/payment', component: PaymentComponent },
+  { path: 'wishlist', component: WishlistComponent },
   { path: '**', component: NotFoundComponent },
 ];
 
