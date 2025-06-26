@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { Product } from '../../models/product.model';
 import { ActivatedRoute } from '@angular/router';
-import { CartService} from '../../services/cart.service';
+import { CartHelperService } from '../../services/cart-helper.service';
 @Component({
   selector: 'app-product-detail',
   standalone: false,
@@ -17,7 +17,7 @@ export class ProductDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private productService: ProductService,
-    private cartService: CartService
+    private cartHelper: CartHelperService
   ) {}
 
   ngOnInit(): void {
@@ -45,29 +45,25 @@ export class ProductDetailComponent implements OnInit {
 
   loadRelatedProducts(): void {
     if (this.product) {
-      console.log(this.product);
       this.productService.getRelatedProducts(this.product.id).subscribe({
-
         next: (products) => {
           this.relatedProducts = products;
+          this.loading=false;
         },
         error: (err) => {
           console.error('Error loading related products:', err);
         },
       });
+    }else{
+      this.loading=false;
     }
   }
 
-  addToCart(): void {
-    if (!this.product?.id) return;
-    this.cartService.increaseProductQuantity(this.product.id).subscribe({
-      next: () => {
-        alert('Added to cart!');
-      },
-      error: () => {
-        alert('Failed to add to cart.');
-      }
-    });
-    console.log('Added from details:', this.product);
+addToCart(): void {
+   if (!this.product) {
+    console.log('Product is undefined!');
+    return;
   }
+  this.cartHelper.addToCart(this.product);
+}
 }

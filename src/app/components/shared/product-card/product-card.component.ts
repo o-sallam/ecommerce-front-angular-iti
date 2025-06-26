@@ -3,7 +3,7 @@ import { Product} from '../../../models/product.model';
 import { CartService } from '../../../services/cart.service';
 import { WishlistService } from '../../../services/wishlist.service';
 import { Observable } from 'rxjs';
-
+import { CartHelperService } from '../../../services/cart-helper.service';
 
 @Component({
   selector: 'app-product-card',
@@ -32,6 +32,15 @@ addToWishlist(productId: string): Observable<any> {
   return this.wishlistService.addToWishlist(productId);
 }
 
+  constructor(private cartHelper: CartHelperService) { }
+
+addToCart(): void {
+   if (!this.product) {
+    console.log('Product is undefined!');
+    return;
+  }
+  this.cartHelper.addToCart(this.product);
+}
 
 }
 

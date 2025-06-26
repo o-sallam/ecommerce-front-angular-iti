@@ -138,11 +138,11 @@ features = [
   if (!product?.id) return;
   this.cartService.increaseProductQuantity(product.id).subscribe({
     next: () => {
-      alert('Added to cart!');
+      console.log('Added to cart!');
     },
     error: (err) => {
       console.error('Failed to add to cart:', err);
-      alert('Failed to add to cart.');
+      console.log('Failed to add to cart.');
     }
   });
   console.log('Added from category:', product);
