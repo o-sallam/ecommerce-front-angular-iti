@@ -18,10 +18,10 @@ export class ProductCardComponent {
     if (!this.product?.id) return;
     this.cartService.increaseProductQuantity(this.product.id).subscribe({
       next: () => {
-        alert('Added to cart!');
+        console.log('Added to cart!');
       },
       error: () => {
-        alert('Failed to add to cart.');
+        console.log('Failed to add to cart.');
       }
     });
   }

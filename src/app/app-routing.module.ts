@@ -10,11 +10,9 @@ import { ContactusComponent } from './pages/contactus/contactus.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CategoryComponent } from './pages/category/category.component';
-<<<<<<< HEAD
 import { CheckoutPageComponent } from './pages/checkout-page/checkout-page.component';
-=======
 import { PaymentContainerComponent } from './components/specific/payment-container/payment-container.component';
->>>>>>> be275f1520a9b546afd5956f9fac9babe504cf36
+import { OrderConfirmationComponent } from './pages/order-confirmation/order-confirmation.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -27,11 +25,9 @@ const routes: Routes = [
   { path: 'aboutus', component: AboutusComponent },
   { path: 'contactus', component: ContactusComponent },
   { path: 'category/:type', component: CategoryComponent},
-<<<<<<< HEAD
   { path: 'checkout', component: CheckoutPageComponent},
-=======
   {path: 'payment', component: PaymentContainerComponent },
->>>>>>> be275f1520a9b546afd5956f9fac9babe504cf36
+  {path:"orderconfirm",component:OrderConfirmationComponent},
   { path: '**', component: NotFoundComponent },
 ];
 
