@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { Product } from '../../models/product.model';
 import { ActivatedRoute } from '@angular/router';
 import { CartHelperService } from '../../services/cart-helper.service';
+import { EventEmitter } from 'stream';
+import { CartService } from '../../services/cart.service';
+import { CartItem } from '../../models/cart-item.model';
 @Component({
   selector: 'app-product-detail',
   standalone: false,
@@ -17,8 +20,9 @@ export class ProductDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private productService: ProductService,
-    private cartHelper: CartHelperService
+    private cartHelper: CartHelperService,
   ) {}
+
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
