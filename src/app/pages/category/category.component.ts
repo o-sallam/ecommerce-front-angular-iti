@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Product } from '../../models/product.model';
 import { ProductService } from '../../services/product.service';
 import { CartService } from '../../services/cart.service';
+import { CartHelperService } from '../../services/cart-helper.service';
 
 @Component({
   selector: 'app-category',
@@ -17,7 +18,7 @@ export class CategoryComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private productService: ProductService,
-    private cartService: CartService
+    private cartHelper: CartHelperService
   ) {}
 
   ngOnInit() {
@@ -31,17 +32,11 @@ export class CategoryComponent implements OnInit {
         });
     });
   }
-  addToCart(product: Product): void {
-    if (!product?.id) return;
-    this.cartService.increaseProductQuantity(product.id).subscribe({
-      next: () => {
-        alert('Added to cart!');
-      },
-      error: (err) => {
-        console.error('Failed to add to cart:', err);
-        alert('Failed to add to cart.');
-      },
-    });
-    console.log('Added from category:', product);
+ addToCart(): void {
+   if (!this.product) {
+    console.log('Product is undefined!');
+    return;
   }
+  this.cartHelper.addToCart(this.product);
+}
 }

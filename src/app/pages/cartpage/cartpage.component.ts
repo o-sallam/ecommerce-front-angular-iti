@@ -12,6 +12,22 @@ export class CartpageComponent implements OnInit {
   cartItems: CartItem[] = [];
   total: number = 0;
   totalItems: number = 0;
+  loading: boolean = true;
+
+  ngOnInit(): void {
+    this.loading = true;
+    this.cartService.getCart().subscribe({
+    next: (cart) => {
+      this.cartItems = cart.items;
+      this.calculateTotals();
+      this.loading = false;
+    },
+    error: (err) => {
+      console.error('Error loading cart:', err);
+      this.loading = false;
+    }
+  });
+}
 
   constructor(protected cartService: CartService) {}
 
@@ -92,12 +108,6 @@ export class CartpageComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-    this.cartService.getCart().subscribe((cart) => {
-      this.cartItems = cart.items;
-      this.calculateTotals();
-    });
-  }
 
   deleteItem(productId: string): void {
     this.cartService.deleteItemFromCart(productId).subscribe(() => {
