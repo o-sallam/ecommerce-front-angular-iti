@@ -29,6 +29,11 @@ export class NavbarComponent {
     
   }
 
+toggleMenu() {
+  this.isMenuOpen = !this.isMenuOpen;
+}
+
+
   ngDoCheck() {
     // Update login state on every change detection cycle
     this.updateAuthState();

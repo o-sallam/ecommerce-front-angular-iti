@@ -9,7 +9,13 @@
       </button>
       <button class="add-to-cart-btn" (click)="addToCart()">Add to Cart</button>
     </div>
+
+    <div class="wishlist-btn-container">
+        <app-wishlist-button [productId]="product.id" size="small" (click)="addToWishlist(product.id)"></app-wishlist-button>
+    </div>
   </div>
+
+
   <div class="product-info">
     <a
       [routerLink]="['/products', product.id]"

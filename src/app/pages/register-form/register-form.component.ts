@@ -34,7 +34,7 @@ export class RegisterFormComponent {
         return;
       }
       this.loading = true;
-      const username = firstName; // or `${firstName} ${lastName}`
+      const username = `${firstName}`.toLowerCase(); // or `${firstName} ${lastName}`
       this.authService.register({ username, email, password }).subscribe({
         next: () => {
           this.loading = false;
