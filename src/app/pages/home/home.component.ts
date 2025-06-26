@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     {
       name: 'Chairs',
       slug: 'chairs',
-      description: 'Elegant dining sets for memorable gatherings',
+      description: 'Elegant tables for memorable gatherings',
       image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=400'
     },
     {

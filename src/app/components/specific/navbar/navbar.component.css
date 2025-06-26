@@ -443,6 +443,7 @@
       .hamburger {
         display: flex;
       }
+      
 
       .cart-dropdown {
         right: 10px;
@@ -450,6 +451,24 @@
         max-width: 350px;
       }
     }
+    .sidebar-menu {
+  position: fixed;
+  top: 50px;
+  left: -250px;
+  width: 200px;
+  height: calc(60vh - 30px);
+  background-color: #93353e;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px 10px;
+  transition: left 0.3s ease;
+  z-index: 2000;
+}
+.sidebar-menu.active {
+  left: 0;
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.2);
+}
   .search-container {
     display: none;
   }
