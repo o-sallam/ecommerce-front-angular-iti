@@ -14,7 +14,6 @@ import { NavbarComponent } from './components/specific/navbar/navbar.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { RegisterFormComponent } from './pages/register-form/register-form.component';
 import { LoginFormComponent } from './pages/login-form/login-form.component';
-import { CheckoutPageComponent } from './pages/checkout-page/checkout-page.component';
 import { CheckoutContainerComponent } from './components/specific/checkout-container/checkout-container.component';
 import { CheckoutFormComponent } from './components/shared/checkout-form/checkout-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -24,8 +23,8 @@ import { CommonModule } from '@angular/common';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { AboutusComponent } from './pages/aboutus/aboutus.component';
 import { CategoryComponent } from './pages/category/category.component';
-import { PaymentFormComponent } from './components/shared/payment-form/payment-form.component';
-import { PaymentContainerComponent } from './components/specific/payment-container/payment-container.component';
+import { PaymentComponent } from './pages/payment/payment.component';
+import { ShippingComponent } from './pages/shipping/shipping.component';
 import { WishlistComponent } from './pages/wishlist/wishlist.component';
 import { WishlistButtonComponent } from './components/shared/wishlist-button/wishlist-button.component';
 @NgModule({
@@ -40,7 +39,6 @@ import { WishlistButtonComponent } from './components/shared/wishlist-button/wis
     ProductDetailComponent,
     RegisterFormComponent,
     LoginFormComponent,
-    CheckoutPageComponent,          
     CheckoutContainerComponent,
     CheckoutFormComponent,
     HomeComponent,
@@ -51,6 +49,8 @@ import { WishlistButtonComponent } from './components/shared/wishlist-button/wis
     ExploreCollectionComponent,
     PaymentFormComponent,
     PaymentContainerComponent,
+    PaymentComponent,
+    ShippingComponent,
     WishlistComponent,
     WishlistButtonComponent
   ],

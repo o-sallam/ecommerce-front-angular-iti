@@ -53,11 +53,11 @@
             <p class="product-description">{{ product.description }}</p>
 
             <div class="product-actions">
-              <div class="quantity-selector">
+              <!-- <div class="quantity-selector">
                 <button class="quantity-btn minus">-</button>
                 <input type="text" class="quantity-input" value="1" />
                 <button class="quantity-btn plus">+</button>
-              </div>
+              </div> -->
               <button class="add-to-cart-btn" (click)="addToCart()">
                 Add to Cart
               </button>
@@ -71,7 +71,7 @@
     <!-- *ngIf="relatedProducts?.length > 0" -->
     <div class="related-products-section">
       <h2>You Might Also Like</h2>
-      <div class="products-grid">
+      <div class="products-grid" *ngIf="relatedProducts.length > 0">
         <app-product-card
           *ngFor="let relatedProduct of relatedProducts"
           [product]="relatedProduct"

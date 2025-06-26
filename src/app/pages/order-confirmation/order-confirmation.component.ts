@@ -21,7 +21,10 @@ export class OrderConfirmationComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
-      const orderId = params['orderId'];
+      const orderId: string | undefined = params['orderId'];
+
+      console.log('Received orderId:', orderId); // ✅ تساعد في التحقق من القيمة
+
       if (orderId) {
         this.fetchOrder(orderId);
       } else {
@@ -32,12 +35,16 @@ export class OrderConfirmationComponent implements OnInit {
   }
 
   fetchOrder(orderId: string): void {
+    this.loading = true;
+    this.error = null;
+
     this.orderService.getOrderById(orderId).subscribe({
-      next: (order) => {
+      next: (order: Order) => {
+        console.log('Fetched order:', order); // ✅ التحقق من شكل الطلب
         this.order = order;
         this.loading = false;
       },
-      error: (err) => {
+      error: (err: any) => {
         console.error('Error fetching order:', err);
         this.error = 'Failed to fetch order details. Please try again later.';
         this.loading = false;
@@ -50,6 +57,6 @@ export class OrderConfirmationComponent implements OnInit {
   }
 
   navigateToOrders(): void {
-    this.router.navigate(['/orders']); // Assuming you have an '/orders' route
+    this.router.navigate(['/orders']);
   }
 }

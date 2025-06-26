@@ -52,18 +52,12 @@
   padding: 3rem;
 }
 
-.form-floating > .form-control {
-  transition: all 0.3s ease;
-}
-
 .auth-link {
   color: #93353E;
   font-weight: 600;
   text-decoration: none;
-  background-color: transparent;
-  padding: 0;
+  /* background-color: transparent; */
   border: none;
-  transition: color 0.3s ease;
 }
 
 .auth-link:hover {
@@ -80,7 +74,7 @@
   font-weight: bold;
   border-radius: 50px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  /* transition: all 0.3s ease; */
   text-transform: uppercase;
   letter-spacing: 1px;
   box-shadow: 0 4px 15px rgba(147, 53, 62, 0.2);
