@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { ProductService } from '../../services/product.service';
 import { Product } from '../../models/product.model';
 import { ActivatedRoute } from '@angular/router';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-home',
@@ -14,6 +15,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 
 export class HomeComponent implements OnInit, OnDestroy {
+  product?: Product;
+  products: Product[] = [];
   currentSlide = 0;
   totalSlides = 3;
   slideInterval: any;
@@ -23,14 +26,15 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
-    private productService: ProductService
+    private productService: ProductService,
+    private cartService: CartService
   ) {}
 
   categories = [
     {
-      name: 'Dining Room',
-      slug: 'dining-room',
-      description: 'Elegant dining sets for memorable gatherings',
+      name: 'Chairs',
+      slug: 'chairs',
+      description: 'Elegant tables for memorable gatherings',
       image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=400'
     },
     {
@@ -40,8 +44,8 @@ export class HomeComponent implements OnInit, OnDestroy {
       image: 'https://images.pexels.com/photos/1743229/pexels-photo-1743229.jpeg?auto=compress&cs=tinysrgb&w=400'
     },
     {
-      name: 'Living Room',
-      slug: 'living-room',
+      name: 'Tables',
+      slug: 'tables',
       description: 'Sophisticated seating and entertainment pieces',
       image: 'https://images.pexels.com/photos/1571463/pexels-photo-1571463.jpeg?auto=compress&cs=tinysrgb&w=400'
     }
@@ -80,7 +84,6 @@ features = [
     ]
   }
 ];
-
 
 
   ngOnInit() {
@@ -131,8 +134,17 @@ features = [
 
   }
 
-  addToCart(product: any) {
-    console.log('Added to cart:', product);
-    // Implement add to cart functionality
-  }
+  addToCart(product: Product): void {
+  if (!product?.id) return;
+  this.cartService.increaseProductQuantity(product.id).subscribe({
+    next: () => {
+      console.log('Added to cart!');
+    },
+    error: (err) => {
+      console.error('Failed to add to cart:', err);
+      console.log('Failed to add to cart.');
+    }
+  });
+  console.log('Added from category:', product);
+}
 }

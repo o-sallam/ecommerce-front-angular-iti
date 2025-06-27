@@ -20,10 +20,10 @@
           <div class="footer-section">
             <h4>Categories</h4>
             <ul>
-              <li><a routerLink="/products/dining-room">Dining Room</a></li>
-              <li><a routerLink="/products/bedroom">Bedroom</a></li>
-              <li><a routerLink="/products/living-room">Living Room</a></li>
-              <li><a routerLink="/products/kitchen">Kitchen</a></li>
+              <li><a [routerLink]="['/products','category', 'bedroom']">Bedroom</a></li>
+              <li><a [routerLink]="['/products','category', 'tables']">Tables</a></li>
+              <li><a [routerLink]="['/products','category', 'chairs']">Chairs</a></li>
+              <li><a [routerLink]="['/products','category', 'accessories']">Accessories</a></li>
             </ul>
           </div>
 
