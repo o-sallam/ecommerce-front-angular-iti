@@ -47,8 +47,6 @@ import { WishlistButtonComponent } from './components/shared/wishlist-button/wis
     AboutusComponent,
     CategoryComponent,
     ExploreCollectionComponent,
-    PaymentFormComponent,
-    PaymentContainerComponent,
     PaymentComponent,
     ShippingComponent,
     WishlistComponent,
