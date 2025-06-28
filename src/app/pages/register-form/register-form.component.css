@@ -83,7 +83,6 @@
 
 .auth-label i {
   color: #aaa;
-  transition: color 0.3s ease;
 }
 
 .form-control:focus ~ .auth-label i {
