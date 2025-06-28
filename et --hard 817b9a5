@@ -1,0 +1,42 @@
+[33m5b093df[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdevelopment[m[33m, [m[1;31morigin/development[m[33m)[m HEAD@{0}: reset: moving to HEAD~1
+[33m817b9a5[m HEAD@{1}: commit: refresh
+[33m5b093df[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdevelopment[m[33m, [m[1;31morigin/development[m[33m)[m HEAD@{2}: pull: Fast-forward
+[33mbe275f1[m HEAD@{3}: commit: fix(getProductsByCategoryName conflict resoved)
+[33m7e77a1b[m HEAD@{4}: pull: Fast-forward
+[33m19caa85[m HEAD@{5}: commit: fix(app.module confliction)
+[33m2a55a0c[m HEAD@{6}: commit (merge): feat(get prodcuts by category name page with it route)
+[33m053d3f2[m HEAD@{7}: commit: feat(getproducts by cat name and it rout)
+[33mcec73bf[m HEAD@{8}: commit: fix(cart item remove)
+[33m5cf008c[m HEAD@{9}: commit: optemestic delete cart
+[33m158569a[m HEAD@{10}: commit (merge): Merge branch 'development' of https://github.com/o-sallam/ecommerce-front-angular-iti into development
+[33m002dbff[m HEAD@{11}: commit: feat(cart inc dec )
+[33ma1a55b2[m HEAD@{12}: commit: fix(the tokens)
+[33mcb8ecdf[m HEAD@{13}: commit: feat(add the cart logic)
+[33m3de8a53[m HEAD@{14}: commit: design(nav username)
+[33m9db1d19[m HEAD@{15}: commit: edit(show the username instead of logged email)
+[33me018581[m HEAD@{16}: commit (merge): fix
+[33m6d7753f[m HEAD@{17}: commit: feat(logout)
+[33m934fe3b[m HEAD@{18}: commit: feat(register)
+[33m40dbb53[m HEAD@{19}: commit: feat(auth, image edited)
+[33mb14f30c[m HEAD@{20}: pull: Fast-forward
+[33md901f8d[m HEAD@{21}: commit: edit(linke of home from /home to / , env file remove the lst /
+[33me9f3eb9[m HEAD@{22}: commit: edit(linke of home from /home to / , env file remove the lst /
+[33m1854312[m HEAD@{23}: commit: add(env:var of api vercel)
+[33m5364193[m HEAD@{24}: pull: Fast-forward
+[33me2e03aa[m HEAD@{25}: pull: Fast-forward
+[33ma889160[m HEAD@{26}: commit: feat(prodcut-images direcotry)
+[33mf8804ab[m HEAD@{27}: commit (merge): update
+[33m6dcd77f[m HEAD@{28}: commit: redirect the creators images
+[33m1d0931d[m HEAD@{29}: pull: Fast-forward
+[33mc817538[m HEAD@{30}: pull: Fast-forward
+[33mf9a7d24[m HEAD@{31}: pull: Fast-forward
+[33md471f55[m HEAD@{32}: commit: convert to CSR
+[33m6e6efaa[m HEAD@{33}: pull: Fast-forward
+[33m5d01d99[m HEAD@{34}: pull origin development: Fast-forward
+[33m95c5fd5[m HEAD@{35}: checkout: moving from main to development
+[33m785e85c[m[33m ([m[1;32mmain[m[33m)[m HEAD@{36}: commit: dev branch , services
+[33mfd536f0[m HEAD@{37}: checkout: moving from development to main
+[33m95c5fd5[m HEAD@{38}: commit: services folder
+[33mfd536f0[m HEAD@{39}: checkout: moving from main to development
+[33mfd536f0[m HEAD@{40}: commit: strucutre
+[33mf494a2c[m HEAD@{41}: commit (initial): inisal angular app
