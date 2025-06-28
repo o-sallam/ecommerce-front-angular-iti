@@ -1,20 +1,21 @@
 export interface WishlistItem {
   productId: {
+    id: string;
     name: string;
     description: string;
     price: number;
-    category: string;
-    quantity: number;
-    sold: number;
     images: string[];
     thumbnail: string;
-    totalRating: number;
-    featured: boolean;
-    ratings: any[];
-    createdAt: string;
-    updatedAt: string;
-    id: string;
+    category: string;
   };
+  addedAt: string;
+}
+
+export interface WishlistResponse {
+  id: string;
+  user: string;
+  items: WishlistItem[];
+  totalItems: number;
   createdAt: string;
   updatedAt: string;
 }

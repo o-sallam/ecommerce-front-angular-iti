@@ -29,7 +29,7 @@ export class WishlistComponent implements OnInit {
     this.loading = true;
     this.wishlistService.getWishlist().subscribe({
       next: (wishlist) => {
-        // this.wishlistItems = wishlist.items;
+        this.wishlistItems = wishlist.items;
         this.loading = false;
       },
       error: (err) => {
@@ -44,7 +44,7 @@ export class WishlistComponent implements OnInit {
     this.wishlistService.removeFromWishlist(productId).subscribe({
       next: () => {
         this.wishlistItems = this.wishlistItems.filter(
-          item => item.productId.id !== productId
+          (item) => item.productId.id !== productId
         );
       },
       error: (err) => {

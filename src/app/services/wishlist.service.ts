@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
-import { WishlistItem } from '../models/wishlist-item.model';
+import { WishlistItem, WishlistResponse } from '../models/wishlist-item.model';
 
 @Injectable({
   providedIn: 'root',
@@ -34,9 +34,9 @@ export class WishlistService {
   }
 
   // Get user's wishlist
-  getWishlist(): Observable<WishlistItem> {
+  getWishlist(): Observable<WishlistResponse> {
     const token = localStorage.getItem('token');
-    return this.http.get<WishlistItem>(`${this.wishlistApiUrl}/me`, {
+    return this.http.get<WishlistResponse>(`${this.wishlistApiUrl}/me`, {
       headers: token ? { Authorization: `Bearer ${token}` } : {},
     });
   }
@@ -44,8 +44,11 @@ export class WishlistService {
   // Check if product is in wishlist
   isInWishlist(productId: string): Observable<{ inWishlist: boolean }> {
     const token = localStorage.getItem('token');
-    return this.http.get<{ inWishlist: boolean }>(`${this.wishlistApiUrl}/check/${productId}`, {
-      headers: token ? { Authorization: `Bearer ${token}` } : {},
-    });
+    return this.http.get<{ inWishlist: boolean }>(
+      `${this.wishlistApiUrl}/check/${productId}`,
+      {
+        headers: token ? { Authorization: `Bearer ${token}` } : {},
+      }
+    );
   }
 }

@@ -29,6 +29,7 @@ import { ShippingComponent } from './pages/shipping/shipping.component';
 import { WishlistComponent } from './pages/wishlist/wishlist.component';
 import { WishlistButtonComponent } from './components/shared/wishlist-button/wishlist-button.component';
 import { RegisterFormComponent } from './pages/register-form/register-form.component';
+import { OrderConfirmationComponent } from './pages/order-confirmation/order-confirmation.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +55,8 @@ import { RegisterFormComponent } from './pages/register-form/register-form.compo
     PaymentComponent,
     ShippingComponent,
     WishlistComponent,
-    WishlistButtonComponent
+    WishlistButtonComponent,
+    OrderConfirmationComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,6 +68,6 @@ import { RegisterFormComponent } from './pages/register-form/register-form.compo
     RouterModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
