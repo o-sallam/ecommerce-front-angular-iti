@@ -33,6 +33,12 @@ export class LoginFormComponent implements OnInit {
     }
   }
 
+  showPassword: boolean = false;
+
+togglePasswordVisibility() {
+  this.showPassword = !this.showPassword;
+}
+
   onSubmit() {
     this.errorMsg = null;
     if (this.loginForm.valid) {
