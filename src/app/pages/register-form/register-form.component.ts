@@ -13,8 +13,14 @@ export class RegisterFormComponent {
   registerForm: FormGroup;
   loading = false;
   errorMsg: string | null = null;
+  showPassword = false;
+  showConfirmPassword = false;
 
-  constructor(private fb: FormBuilder, private router: Router, private authService: AuthService) {
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private authService: AuthService
+  ) {
     this.registerForm = this.fb.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
@@ -27,14 +33,18 @@ export class RegisterFormComponent {
 
   onSubmit() {
     this.errorMsg = null;
+
     if (this.registerForm.valid) {
       const { firstName, lastName, email, password, confirmPassword } = this.registerForm.value;
+
       if (password !== confirmPassword) {
         this.errorMsg = 'Passwords do not match.';
         return;
       }
+
       this.loading = true;
-      const username = `${firstName}`.toLowerCase(); // or `${firstName} ${lastName}`
+      const username = `${firstName}`.toLowerCase();
+
       this.authService.register({ username, email, password }).subscribe({
         next: () => {
           this.loading = false;
@@ -45,6 +55,14 @@ export class RegisterFormComponent {
           this.errorMsg = err?.error?.message || 'Registration failed.';
         }
       });
+    }
+  }
+
+  togglePasswordVisibility(field: string) {
+    if (field === 'password') {
+      this.showPassword = !this.showPassword;
+    } else if (field === 'confirmPassword') {
+      this.showConfirmPassword = !this.showConfirmPassword;
     }
   }
 }

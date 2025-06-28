@@ -1,7 +1,3 @@
-/* Register Component - Beige Elegance Theme */
-
-/* Main container with a soft beige background */
-
  .row.justify-content-center{
   background-color:#FAF4E7;
  }
@@ -15,7 +11,6 @@
   background-color: #FAF4E7;
 }
 
-/* The main registration card with a light theme */
 .auth-card {
   background: #ffffff;
   border-radius: 16px;
@@ -25,13 +20,11 @@
   animation: fadeIn 1s ease-out;
 }
 
-/* Card Header */
 .auth-header {
   padding: 3rem 2rem 2rem;
   text-align: center;
   border-bottom: 1px solid #FAF4E7;
 }
-
 
 .auth-title {
   color: #7A2B33;
@@ -47,16 +40,58 @@
   font-size: 1.1rem;
 }
 
-/* Card Body */
 .auth-body {
   padding: 3rem;
+}
+
+.auth-body input[type="email"],
+.auth-body input[type="password"] {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #f5f5f5;
+  box-sizing: border-box;
+  transition: border 0.3s ease;
+}
+
+.form-floating.position-relative {
+  position: relative;
+}
+
+.form-floating .form-control:focus {
+  border-color: #93353E;
+  background-color: #fff;
+  box-shadow: none;
+}
+
+.toggle-password-btn {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #93353E;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+  padding: 0;
+  z-index: 2;
+}
+
+.toggle-password-btn:hover {
+  text-decoration: underline;
 }
 
 .auth-link {
   color: #93353E;
   font-weight: 600;
   text-decoration: none;
-  /* background-color: transparent; */
+  background-color: transparent;
   border: none;
 }
 
@@ -74,7 +109,7 @@
   font-weight: bold;
   border-radius: 50px;
   cursor: pointer;
-  /* transition: all 0.3s ease; */
+  transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 1px;
   box-shadow: 0 4px 15px rgba(147, 53, 62, 0.2);
@@ -86,8 +121,23 @@
   box-shadow: 0 8px 25px rgba(147, 53, 62, 0.3);
 }
 
+.toggle-password-btn {
+  background: transparent;
+  border: none;
+  color: #93353E;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
 
-/* Keyframe Animations */
+.toggle-password-btn:hover {
+  color: #7A2B33;
+  text-decoration: underline;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
