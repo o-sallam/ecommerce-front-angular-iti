@@ -5,7 +5,9 @@ import { ProductService } from '../../services/product.service';
 import { Product } from '../../models/product.model';
 import { ActivatedRoute } from '@angular/router';
 import { CartService } from '../../services/cart.service';
-
+import { WishlistService } from '../../services/wishlist.service';
+import { Observable } from 'rxjs';
+import { CartHelperService } from '../../services/cart-helper.service';
 @Component({
   selector: 'app-home',
   standalone: false,
@@ -27,7 +29,10 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor(
     private route: ActivatedRoute,
     private productService: ProductService,
-    private cartService: CartService
+    private cartService: CartService,
+    private wishlistService: WishlistService,
+    private cartHelpService: CartHelperService
+
   ) {}
 
   categories = [
@@ -134,17 +139,14 @@ features = [
 
   }
 
-  addToCart(product: Product): void {
-  if (!product?.id) return;
-  this.cartService.increaseProductQuantity(product.id).subscribe({
-    next: () => {
-      console.log('Added to cart!');
-    },
-    error: (err) => {
-      console.error('Failed to add to cart:', err);
-      console.log('Failed to add to cart.');
-    }
-  });
-  console.log('Added from category:', product);
+  addToCart(): void {
+   if (!this.product) {
+    console.log('Product is undefined!');
+    return;
+  }
+  this.cartHelpService.addToCart(this.product);
+}
+addToWishlist(productId: string): Observable<any> {
+  return this.wishlistService.addToWishlist(productId);
 }
 }

@@ -300,7 +300,12 @@
   opacity: 0;
   transition: opacity 0.3s ease;
 }
-
+.wishlist-btn-container {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 10;
+}
 .product-card:hover .product-overlay {
   opacity: 1;
 }
