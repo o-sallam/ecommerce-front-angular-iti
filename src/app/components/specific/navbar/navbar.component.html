@@ -176,6 +176,8 @@
           placeholder="Search..."
           class="search-input"
           (keyup.enter)="onSearch()"
+          (input)="onSearchInput()"
+          (focus)="onSearchFocus()"
         />
         <svg
           class="search-icon"
@@ -194,6 +196,13 @@
           />
           <path d="m21 21-4.35-4.35" stroke="currentColor" stroke-width="2" />
         </svg>
+
+        <!-- Search Dropdown -->
+        <app-search-dropdown
+          [searchQuery]="searchQuery"
+          [isVisible]="isSearchDropdownVisible"
+          (itemSelected)="hideSearchDropdown()"
+        ></app-search-dropdown>
       </div>
 
       <!-- Wishlist -->

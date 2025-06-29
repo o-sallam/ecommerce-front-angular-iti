@@ -1,0 +1,65 @@
+<div
+  class="search-dropdown"
+  *ngIf="isVisible && (searchQuery.trim().length >= 2 || isLoading)"
+>
+  <div class="dropdown-content">
+    <!-- Loading State -->
+    <div class="loading-state" *ngIf="isLoading">
+      <div class="spinner"></div>
+      <span>Searching...</span>
+    </div>
+
+    <!-- Search Results -->
+    <div class="search-results" *ngIf="!isLoading">
+      <!-- No Results -->
+      <div
+        class="no-results"
+        *ngIf="searchResults.length === 0 && searchQuery.trim().length >= 2"
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <circle
+            cx="11"
+            cy="11"
+            r="8"
+            stroke="currentColor"
+            stroke-width="2"
+          />
+          <path d="m21 21-4.35-4.35" stroke="currentColor" stroke-width="2" />
+        </svg>
+        <span>No products found for "{{ searchQuery }}"</span>
+      </div>
+
+      <!-- Results List -->
+      <div class="results-list" *ngIf="searchResults.length > 0">
+        <div
+          class="result-item"
+          *ngFor="let product of searchResults"
+          (click)="selectItem(product)"
+        >
+          <div class="product-image">
+            <img [src]="getProductImage(product)" [alt]="product.name" />
+          </div>
+          <div class="product-info">
+            <h4 class="product-name">{{ product.name }}</h4>
+            <p class="product-category">{{ product.category }}</p>
+            <p class="product-price">£{{ product.price }}</p>
+          </div>
+        </div>
+
+        <!-- View All Results -->
+        <div class="view-all-results" (click)="onViewAllResults()">
+          <span>View all results for "{{ searchQuery }}"</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M9 18L15 12L9 6"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

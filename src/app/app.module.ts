@@ -29,6 +29,7 @@ import { WishlistComponent } from './pages/wishlist/wishlist.component';
 import { WishlistButtonComponent } from './components/shared/wishlist-button/wishlist-button.component';
 import { RegisterFormComponent } from './pages/register-form/register-form.component';
 import { OrderConfirmationComponent } from './pages/order-confirmation/order-confirmation.component';
+import { SearchDropdownComponent } from './components/shared/search-dropdown/search-dropdown.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,6 +65,7 @@ import { OrderConfirmationComponent } from './pages/order-confirmation/order-con
     CommonModule,
     FormsModule,
     RouterModule,
+    SearchDropdownComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],
