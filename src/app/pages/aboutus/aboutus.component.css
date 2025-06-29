@@ -10,14 +10,14 @@
 
 .about-hero {
   background: linear-gradient(rgba(147, 53, 62, 0.8), rgba(147, 53, 62, 0.8)),
-              url('https://images.pexels.com/photos/1571463/pexels-photo-1571463.jpeg?auto=compress&cs=tinysrgb&w=1200') center/cover;
+    url("https://images.pexels.com/photos/1571463/pexels-photo-1571463.jpeg?auto=compress&cs=tinysrgb&w=1200")
+      center/cover;
   padding: 120px 0;
   text-align: center;
   color: white;
 }
 
 .hero-content h1 {
-  font-family: 'Georgia', serif;
   font-size: 4rem;
   margin-bottom: 20px;
 }
@@ -31,7 +31,7 @@
 
 .our-story {
   padding: 80px 0;
-  background-color: #FAF4E7;
+  background-color: #faf4e7;
 }
 
 .story-content {
@@ -42,9 +42,8 @@
 }
 
 .story-text h2 {
-  font-family: 'Georgia', serif;
   font-size: 2.5rem;
-  color: #93353E;
+  color: #93353e;
   margin-bottom: 30px;
 }
 
@@ -60,19 +59,18 @@
   height: 400px;
   object-fit: cover;
   border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .our-team {
   padding: 80px 0;
-  background-color: #FAF4E7;
+  background-color: #faf4e7;
 }
 
 .our-team h2 {
   text-align: center;
-  font-family: 'Georgia', serif;
   font-size: 2.5rem;
-  color: #93353E;
+  color: #93353e;
   margin-bottom: 50px;
 }
 
@@ -92,7 +90,7 @@
   margin: 0 auto 20px auto;
   border-radius: 50%;
   overflow: hidden;
-  border: 4px solid #E1D8C9;
+  border: 4px solid #e1d8c9;
 }
 
 .member-image img {
@@ -102,13 +100,12 @@
 }
 
 .member-info h3 {
-  font-family: 'Georgia', serif;
-  color: #93353E;
+  color: #93353e;
   margin-bottom: 5px;
 }
 
 .member-role {
-  color: #93353E;
+  color: #93353e;
   font-weight: bold;
   margin-bottom: 15px;
 }

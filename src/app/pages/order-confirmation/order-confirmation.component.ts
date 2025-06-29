@@ -6,7 +6,8 @@ import { Order } from '../../models/order.model';
 @Component({
   selector: 'app-order-confirmation',
   templateUrl: './order-confirmation.component.html',
-  styleUrls: ['./order-confirmation.component.css']
+  styleUrls: ['./order-confirmation.component.css'],
+  standalone:false
 })
 export class OrderConfirmationComponent implements OnInit {
   order: Order | null = null;
@@ -20,7 +21,7 @@ export class OrderConfirmationComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe(params => {
+    this.route.queryParams.subscribe((params) => {
       const orderId: string | undefined = params['orderId'];
 
       console.log('Received orderId:', orderId); // ✅ تساعد في التحقق من القيمة
@@ -48,7 +49,7 @@ export class OrderConfirmationComponent implements OnInit {
         console.error('Error fetching order:', err);
         this.error = 'Failed to fetch order details. Please try again later.';
         this.loading = false;
-      }
+      },
     });
   }
 

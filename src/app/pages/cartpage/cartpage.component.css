@@ -1,6 +1,6 @@
 .checkout-container {
   padding-top: 70px;
-  background-color: #FAF4E7;
+  background-color: #faf4e7;
   min-height: 100vh;
 }
 
@@ -16,9 +16,8 @@
 }
 
 .checkout-header h1 {
-  font-family: 'Georgia', serif;
   font-size: 2.5rem;
-  color: #93353E;
+  color: #93353e;
   margin-bottom: 30px;
 }
 
@@ -38,7 +37,7 @@
 }
 
 .step.active {
-  color: #93353E;
+  color: #93353e;
 }
 
 .step-number {
@@ -55,7 +54,7 @@
 }
 
 .step.active .step-number {
-  background-color: #93353E;
+  background-color: #93353e;
 }
 
 .step-label {
@@ -66,7 +65,7 @@
   background-color: white;
   border-radius: 15px;
   padding: 40px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
 .cart-items-container {
@@ -78,7 +77,7 @@
 
 .btn-place-order {
   width: 100%;
-  background-color: #93353E;
+  background-color: #93353e;
   color: white;
   border: none;
   padding: 18px 30px;
@@ -95,7 +94,7 @@
 }
 
 .btn-place-order:hover:not(:disabled) {
-  background-color: #7A2B33;
+  background-color: #7a2b33;
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(147, 53, 62, 0.3);
 }
@@ -109,14 +108,13 @@
 }
 
 .order-summary h3 {
-  font-family: 'Georgia', serif;
-  color: #93353E;
+  color: #93353e;
   margin-bottom: 25px;
   font-size: 1.5rem;
 }
 
 .summary-totals {
-  border-top: 2px solid #93353E;
+  border-top: 2px solid #93353e;
   padding-top: 20px;
 }
 
@@ -130,37 +128,36 @@
 .summary-row.total {
   font-size: 1.2rem;
   font-weight: bold;
-  color: #93353E;
+  color: #93353e;
   margin-top: 10px;
   padding-top: 10px;
   border-top: 1px solid #e1e1e1;
 }
 
-
-.btn-primary1{
-    background-color: #93353E;
-    border:2px solid #93353E;
-    color:#FAF4E7;
-    padding: 10px 30px;
+.btn-primary1 {
+  background-color: #93353e;
+  border: 2px solid #93353e;
+  color: #faf4e7;
+  padding: 10px 30px;
 }
 
 .btn-primary {
-    background-color: white;
-    border:2px solid #93353E;
-    color: #93353E;
-    padding: 7px 15px;
-    border-radius: 7px;
+  background-color: white;
+  border: 2px solid #93353e;
+  color: #93353e;
+  padding: 7px 15px;
+  border-radius: 7px;
 }
 
 .btn-primary:hover {
-    background-color: #7A2B33;
-    border-color: #7A2B33;
-    color: white;
+  background-color: #7a2b33;
+  border-color: #7a2b33;
+  color: white;
 }
-.txt{
-  color: #7A2B33;
+.txt {
+  color: #7a2b33;
   font-size: larger;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: bold;
 }
 
@@ -168,15 +165,15 @@
   .checkout-steps {
     gap: 20px;
   }
-  
+
   .step-label {
     display: none;
   }
-  
+
   .checkout-content {
     padding: 20px;
   }
-  
+
   .order-summary {
     position: static;
     margin-top: 30px;
@@ -196,7 +193,12 @@
   left: -150px;
   height: 100%;
   width: 150px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
   animation: loading 1.5s infinite;
 }
 
