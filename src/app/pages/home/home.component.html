@@ -87,9 +87,9 @@
       ></span>
     </div>
   </section>
-
+  
   <app-explore-collection></app-explore-collection>
-
+  
   <section class="featured-products">
     <div class="container">
       <h2>Featured Pieces</h2>
@@ -101,10 +101,13 @@
               <a [routerLink]="['/products', product.id]">
                 <button class="quick-view-btn">Quick View</button>
               </a>
-              <button class="add-to-cart-btn" (click)="addToCart(product)">
+              <button class="add-to-cart-btn" (click)="addToCart()">
                 Add to Cart
               </button>
             </div>
+            <div class="wishlist-btn-container">
+          <app-wishlist-button [productId]="product.id" size="small" (click)="addToWishlist(product.id)"></app-wishlist-button>
+          </div>
           </div>
           <div class="product-info">
             <h3>{{ product.name }}</h3>
