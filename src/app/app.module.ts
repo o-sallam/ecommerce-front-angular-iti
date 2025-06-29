@@ -23,7 +23,6 @@ import { ContactusComponent } from './pages/contactus/contactus.component';
 import { CommonModule } from '@angular/common';
 import { FooterComponent } from './components/shared/footer/footer.component';
 import { AboutusComponent } from './pages/aboutus/aboutus.component';
-import { CategoryComponent } from './pages/category/category.component';
 import { PaymentComponent } from './pages/payment/payment.component';
 import { ShippingComponent } from './pages/shipping/shipping.component';
 import { WishlistComponent } from './pages/wishlist/wishlist.component';
@@ -50,7 +49,6 @@ import { OrderConfirmationComponent } from './pages/order-confirmation/order-con
     ContactusComponent,
     FooterComponent,
     AboutusComponent,
-    CategoryComponent,
     ExploreCollectionComponent,
     PaymentComponent,
     ShippingComponent,

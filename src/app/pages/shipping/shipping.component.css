@@ -1,6 +1,6 @@
 .checkout-container {
   padding-top: 70px;
-  background-color: #FAF4E7;
+  background-color: #faf4e7;
   min-height: 100vh;
 }
 
@@ -16,9 +16,8 @@
 }
 
 .checkout-header h1 {
-  font-family: 'Georgia', serif;
   font-size: 2.5rem;
-  color: #93353E;
+  color: #93353e;
   margin-bottom: 30px;
 }
 
@@ -38,7 +37,7 @@
 }
 
 .step.active {
-  color: #93353E;
+  color: #93353e;
 }
 
 .step-number {
@@ -55,7 +54,7 @@
 }
 
 .step.active .step-number {
-  background-color: #93353E;
+  background-color: #93353e;
 }
 
 .step-label {
@@ -66,7 +65,7 @@
   background-color: white;
   border-radius: 15px;
   padding: 40px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   display: flex;
   justify-content: center;
 }
@@ -83,8 +82,7 @@
 }
 
 .form-section h3 {
-  font-family: 'Georgia', serif;
-  color: #93353E;
+  color: #93353e;
   margin-bottom: 25px;
   font-size: 1.5rem;
 }
@@ -111,13 +109,13 @@
 
 .form-control:focus {
   outline: none;
-  border-color: #93353E;
+  border-color: #93353e;
   box-shadow: 0 0 0 3px rgba(147, 53, 62, 0.1);
 }
 
 .btn-place-order {
   width: 100%;
-  background-color: #93353E;
+  background-color: #93353e;
   color: white;
   border: none;
   padding: 18px 30px;
@@ -133,7 +131,7 @@
 }
 
 .btn-place-order:hover:not(:disabled) {
-  background-color: #7A2B33;
+  background-color: #7a2b33;
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(147, 53, 62, 0.3);
 }
@@ -171,13 +169,18 @@
 }
 
 .skeleton::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -150%;
   width: 150%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
   animation: shimmer 1.5s infinite;
 }
 
@@ -220,7 +223,8 @@
   margin-left: -15px;
 }
 
-.col-md-4, .col-md-6 {
+.col-md-4,
+.col-md-6 {
   position: relative;
   width: 100%;
   padding-right: 15px;
